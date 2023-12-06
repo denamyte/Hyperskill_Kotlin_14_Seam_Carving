@@ -3,7 +3,7 @@ package seamcarving
 fun main(args: Array<String>) {
     val inName = readParam(args, "-in")
     val outName = readParam(args, "-out")
-    Stage4(inName, outName).run()
+    Stage5(inName, outName).run()
 }
 
 /**
