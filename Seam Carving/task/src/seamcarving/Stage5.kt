@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage
 import java.io.File
 import javax.imageio.ImageIO
 
-class Stage4(
+class Stage5(
     inName: String,
     private val outName: String
 ) {
@@ -21,12 +21,11 @@ class Stage4(
     }
 
     fun run() {
-        val carver = SeamCarver(energizer.normEnergies, true)
+        val carver = SeamCarver(energizer.normEnergies, false)
         val crdList = carver.carve()
         val red = Color.RED.rgb
         crdList.forEach { (x, y) -> image.setRGB(x, y, red) }
 
-        println(crdList.joinToString("\n"))
         val outFile = File(outName)
         ImageIO.write(image, outFile.extension, outFile)
     }

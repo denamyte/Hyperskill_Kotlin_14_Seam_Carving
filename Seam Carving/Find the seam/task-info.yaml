@@ -303,9 +303,6 @@ files:
   - name: src/seamcarving/Stage1.kt
     visible: true
     learner_created: true
-  - name: src/seamcarving/Stage4.kt
-    visible: true
-    learner_created: true
   - name: src/seamcarving/Energizer.kt
     visible: true
     learner_created: true
@@ -319,6 +316,12 @@ files:
     visible: true
     learner_created: true
   - name: test/trees-seam.png
+    visible: true
+    learner_created: true
+  - name: src/seamcarving/Stage3.kt
+    visible: true
+    learner_created: true
+  - name: src/seamcarving/Stage5.kt
     visible: true
     learner_created: true
 feedback_link: https://hyperskill.org/learn/step/9018#comment

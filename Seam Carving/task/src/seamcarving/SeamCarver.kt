@@ -14,8 +14,8 @@ class SeamCarver(private var energies: Energies, val isDownward: Boolean) {
         ) {
             val x = if (isDownward) x else y
             val y = if (isDownward) y else x
-            val prevCell: SeamNode? = cells.minByOrNull { it.energySum }
-            val energySum: Double = energy + (prevCell?.energySum ?: .0)
+            val prevNode: SeamNode? = cells.minByOrNull { it.energySum }
+            val energySum: Double = energy + (prevNode?.energySum ?: .0)
 
             override fun toString() = "($x, $y) -> $energySum"
         }
@@ -30,19 +30,19 @@ class SeamCarver(private var energies: Energies, val isDownward: Boolean) {
             .mapIndexed { x, energy -> SeamNode(isDownward, x, 0, energy) }
 
         for (rowIndex in 1 until maxRowIndex) {
-            lastSeamNodes = getRow(rowIndex).mapIndexed { i, en ->
+            lastSeamNodes = getRow(rowIndex).mapIndexed { x, energy ->
                 val upperSeamNodes = lastSeamNodes.subList(
-                    max(0, i - 1),
-                    min(i + 2, lastSeamNodes.size)
+                    max(0, x - 1),
+                    min(x + 2, lastSeamNodes.size)
                 ).toTypedArray()
-                SeamNode(isDownward, i, rowIndex, en, *upperSeamNodes)
+                SeamNode(isDownward, x, rowIndex, energy, *upperSeamNodes)
             }
         }
         var minNode: SeamNode? = lastSeamNodes.minByOrNull { it.energySum }
         val crdList = mutableListOf<Pair<Int, Int>>()
         while (minNode != null) {
             crdList.add(Pair(minNode.x, minNode.y))
-            minNode = minNode.prevCell
+            minNode = minNode.prevNode
         }
         return crdList.reversed()
     }
