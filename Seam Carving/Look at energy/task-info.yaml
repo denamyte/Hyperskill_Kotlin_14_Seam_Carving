@@ -195,6 +195,12 @@ files:
   - name: test/trees-energy.png
     visible: true
     learner_created: true
+  - name: src/seamcarving/Stage1.kt
+    visible: true
+    learner_created: true
+  - name: src/seamcarving/Stage2.kt
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/9017#comment
 status: Solved
 feedback:
