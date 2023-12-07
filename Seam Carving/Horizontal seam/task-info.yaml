@@ -334,6 +334,9 @@ files:
   - name: test/small-seam-hor.png
     visible: true
     learner_created: true
+  - name: src/seamcarving/Stage4.kt
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/9019#comment
 status: Solved
 feedback:

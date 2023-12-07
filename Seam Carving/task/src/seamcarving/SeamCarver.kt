@@ -3,17 +3,19 @@ package seamcarving
 import kotlin.math.max
 import kotlin.math.min
 
-class SeamCarver(private var energies: Energies, val isDownward: Boolean) {
-
+class SeamCarver(
+    private var energies: Energies,
+    private val isVertical: Boolean
+) {
     companion object {
         class SeamNode(
-            isDownward: Boolean,
+            isVertical: Boolean,
             x: Int, y: Int,
             energy: Double,
             vararg cells: SeamNode
         ) {
-            val x = if (isDownward) x else y
-            val y = if (isDownward) y else x
+            val x = if (isVertical) x else y
+            val y = if (isVertical) y else x
             val prevNode: SeamNode? = cells.minByOrNull { it.energySum }
             val energySum: Double = energy + (prevNode?.energySum ?: .0)
 
@@ -22,12 +24,12 @@ class SeamCarver(private var energies: Energies, val isDownward: Boolean) {
     }
 
     fun carve(): List<Pair<Int, Int>> {
-        val maxRowIndex = when (isDownward) {
+        val maxRowIndex = when (isVertical) {
             true -> energies[0].size
             false -> energies.size
         }
         var lastSeamNodes = getRow(0)
-            .mapIndexed { x, energy -> SeamNode(isDownward, x, 0, energy) }
+            .mapIndexed { x, energy -> SeamNode(isVertical, x, 0, energy) }
 
         for (rowIndex in 1 until maxRowIndex) {
             lastSeamNodes = getRow(rowIndex).mapIndexed { x, energy ->
@@ -35,7 +37,7 @@ class SeamCarver(private var energies: Energies, val isDownward: Boolean) {
                     max(0, x - 1),
                     min(x + 2, lastSeamNodes.size)
                 ).toTypedArray()
-                SeamNode(isDownward, x, rowIndex, energy, *upperSeamNodes)
+                SeamNode(isVertical, x, rowIndex, energy, *upperSeamNodes)
             }
         }
         var minNode: SeamNode? = lastSeamNodes.minByOrNull { it.energySum }
@@ -48,7 +50,7 @@ class SeamCarver(private var energies: Energies, val isDownward: Boolean) {
     }
 
     private fun getRow(rowIndex: Int): Array<Double> {
-        return when (isDownward) {
+        return when (isVertical) {
             true -> energies.map { it[rowIndex] }.toTypedArray()
             false -> energies[rowIndex]
         }

@@ -263,6 +263,88 @@ files:
   - name: test/trees.png
     visible: false
     learner_created: false
+  - name: test/small-energy.png
+    visible: true
+    learner_created: true
+  - name: test/out3.png
+    visible: true
+    learner_created: true
+  - name: src/seamcarving/SeamCarver.kt
+    visible: true
+    learner_created: true
+  - name: test/blue-negative.png
+    visible: true
+    learner_created: true
+  - name: test/out1.png
+    visible: true
+    learner_created: true
+  - name: test/trees-energy.png
+    visible: true
+    learner_created: true
+  - name: test/small-seam-hor.png
+    visible: true
+    learner_created: true
+  - name: test/blue-seam-hor.png
+    visible: true
+    learner_created: true
+  - name: test/blue-energy.png
+    visible: true
+    learner_created: true
+  - name: test/blue-seam.png
+    visible: true
+    learner_created: true
+  - name: test/small-negative.png
+    visible: true
+    learner_created: true
+  - name: test/out2.png
+    visible: true
+    learner_created: true
+  - name: test/trees-seam-hor.png
+    visible: true
+    learner_created: true
+  - name: test/trees-seam.png
+    visible: true
+    learner_created: true
+  - name: src/seamcarving/Stage2.kt
+    visible: true
+    learner_created: true
+  - name: test/small-seam.png
+    visible: true
+    learner_created: true
+  - name: src/seamcarving/Stage3.kt
+    visible: true
+    learner_created: true
+  - name: test/trees-negative.png
+    visible: true
+    learner_created: true
+  - name: src/seamcarving/Stage4.kt
+    visible: true
+    learner_created: true
+  - name: src/seamcarving/Stage1.kt
+    visible: true
+    learner_created: true
+  - name: src/seamcarving/Stage6.kt
+    visible: true
+    learner_created: true
+  - name: src/seamcarving/RGBMatrix.kt
+    visible: true
+    learner_created: true
+  - name: test/trees-reduced.png
+    visible: true
+    learner_created: true
+  - name: test/blue-reduced.png
+    visible: true
+    learner_created: true
+  - name: test/small-reduced.png
+    visible: true
+    learner_created: true
+  - name: src/seamcarving/Energizer.kt
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/9020#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">Hyperskill</a>
+    to continue learning.
+  time: "Thu, 07 Dec 2023 21:52:49 UTC"
 record: -1

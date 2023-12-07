@@ -1,9 +1,12 @@
 package seamcarving
 
 fun main(args: Array<String>) {
-    val inName = readParam(args, "-in")
-    val outName = readParam(args, "-out")
-    Stage5(inName, outName).run()
+    Stage6(
+        readParam(args, "-in"),
+        readParam(args, "-out"),
+        readParam(args, "-width").toInt(),
+        readParam(args, "-height").toInt()
+    ).run()
 }
 
 /**
