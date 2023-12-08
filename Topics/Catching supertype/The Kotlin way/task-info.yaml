@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: Utilizing the <code>when</code> expression.
+  - text: Applying the  <code>||</code> operator.
+  - text: Incorporating the  <code>&amp;&amp;</code> operator.
+  - text: Implementing several  <code>if</code> statements.
+files:
+  - name: src/Main.kt
+    visible: true
+    text: |
+      // You can experiment here, it won’t be checked
+      
+      fun main(args: Array<String>) {
+        // put your code here
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/31359#comment
+status: Solved
+record: -1
+local_check: false

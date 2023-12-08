@@ -305,22 +305,10 @@ files:
   - name: test/trees-seam.png
     visible: true
     learner_created: true
-  - name: src/seamcarving/Stage2.kt
-    visible: true
-    learner_created: true
   - name: test/small-seam.png
     visible: true
     learner_created: true
-  - name: src/seamcarving/Stage3.kt
-    visible: true
-    learner_created: true
   - name: test/trees-negative.png
-    visible: true
-    learner_created: true
-  - name: src/seamcarving/Stage4.kt
-    visible: true
-    learner_created: true
-  - name: src/seamcarving/Stage1.kt
     visible: true
     learner_created: true
   - name: src/seamcarving/Stage6.kt
