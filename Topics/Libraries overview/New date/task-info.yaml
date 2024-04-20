@@ -1,0 +1,22 @@
+type: code
+files:
+  - name: src/Main.kt
+    visible: true
+    highlight_level: NONE
+    text: |-
+      // Do NOT modify the following function
+      fun addDaysToDate(inputDate: String, inputDays: Int): String {
+          val dateFormat = DateFormat.getDateInstance(DateFormat.LONG)
+      
+          val calendar = Calendar.getInstance()
+          val date = dateFormat.parse(inputDate)
+          calendar.time = date
+          calendar.add(Calendar.DATE, inputDays)
+          val newDate = calendar.time
+          return dateFormat.format(newDate)
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/33996#comment
+status: Unchecked
+record: -1
+submission_language: kotlin

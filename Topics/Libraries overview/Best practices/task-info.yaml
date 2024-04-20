@@ -1,0 +1,22 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: Always choose libraries that are large in size as they offer more functionalities.
+  - text: Understand the library's functionality before using it.
+  - text: Use outdated versions of libraries to ensure compatibility with older systems.
+  - text: Only use libraries that are maintained by JetBrains.
+  - text: Check the library's documentation and ensure it has active community support.
+files:
+  - name: src/Main.kt
+    visible: true
+    text: |
+      // You can experiment here, it won’t be checked
+      
+      fun main(args: Array<String>) {
+        // put your code here
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/33991#comment
+status: Unchecked
+record: -1
+local_check: false

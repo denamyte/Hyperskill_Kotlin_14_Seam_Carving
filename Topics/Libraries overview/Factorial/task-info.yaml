@@ -1,0 +1,18 @@
+type: code
+files:
+  - name: src/Main.kt
+    visible: true
+    highlight_level: NONE
+    text: |-
+      // Do NOT modify the following function
+      fun factorial(n: Int): BigInteger {
+          return when (n) {
+              0 -> BigInteger.ONE
+              else -> BigInteger.valueOf(n.toLong()) * factorial(n - 1)
+          }
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/33995#comment
+status: Unchecked
+record: -1
+submission_language: kotlin
