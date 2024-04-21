@@ -1,0 +1,23 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: Hash functions can be reversed to obtain the original input data from the
+      hash value.
+  - text: Hash functions always produce unique hash values for different input data.
+  - text: Hash functions provide encryption and confidentiality for sensitive data.
+  - text: Hash functions are one-way functions that convert input data of any size into
+      a fixed-size hash value.
+files:
+  - name: src/Main.kt
+    visible: true
+    text: |
+      // You can experiment here, it won’t be checked
+      
+      fun main(args: Array<String>) {
+        // put your code here
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/36632#comment
+status: Unchecked
+record: -1
+local_check: false

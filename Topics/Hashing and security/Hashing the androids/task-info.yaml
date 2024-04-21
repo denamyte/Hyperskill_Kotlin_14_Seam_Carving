@@ -1,0 +1,21 @@
+type: code
+files:
+  - name: src/Main.kt
+    visible: true
+    highlight_level: NONE
+    text: |-
+      import java.security.MessageDigest
+      
+      fun calculateAndroidsHash(androids: List<Android>): String {
+          // write your code here
+          // First create one string to contain all the android strings value in one
+          // the return the SHA-512 hash
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/36638#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 21 Apr 2024 16:31:57 UTC"
+record: -1
+submission_language: kotlin

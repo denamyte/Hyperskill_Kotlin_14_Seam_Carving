@@ -1,0 +1,12 @@
+content:
+  - Theory
+  - Advantages of using hash
+  - Advantages of using Bcrypt encryption
+  - Salt and BCrypt
+  - Password confidentiality
+  - Files
+  - Hash function of a string
+  - Checking a password
+  - Hashing a password
+  - Hashing a password in Kotlin
+  - Hashing the androids

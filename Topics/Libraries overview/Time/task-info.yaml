@@ -7,11 +7,12 @@ files:
         length: 62
         placeholder_text: type your solution here
         initial_state:
-          length: 23
+          length: 62
           offset: 0
         initialized_from_dependency: false
         selected: true
         status: Solved
+        is_visible: false
     text: type your solution here
     learner_created: false
 feedback_link: https://hyperskill.org/learn/step/33993#comment

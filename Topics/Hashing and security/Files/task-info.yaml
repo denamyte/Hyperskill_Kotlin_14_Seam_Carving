@@ -1,0 +1,25 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: Hash functions can detect even the slightest changes in a file by producing
+      a unique hash value for each file.
+  - text: Hash functions are used to check the integrity of a file by comparing the
+      hash value of the file with a known hash value.
+  - text: Hash functions provide a way to encrypt and decrypt files to ensure their
+      integrity.
+  - text: "Hash functions are not necessary for checking the integrity of a file, as\
+    \ file systems already have built-in mechanisms for that purpose."
+files:
+  - name: src/Main.kt
+    visible: true
+    text: |
+      // You can experiment here, it won’t be checked
+      
+      fun main(args: Array<String>) {
+        // put your code here
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/36633#comment
+status: Unchecked
+record: -1
+local_check: false

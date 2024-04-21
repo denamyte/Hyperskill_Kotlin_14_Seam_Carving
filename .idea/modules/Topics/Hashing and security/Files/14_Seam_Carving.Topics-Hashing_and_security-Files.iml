@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-Hashing_and_security-Files" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/Hashing and security/Files" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="14_Seam_Carving" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/Hashing and security/Files">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Hashing and security/Files/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Hashing and security/Files/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Hashing and security/Files/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
