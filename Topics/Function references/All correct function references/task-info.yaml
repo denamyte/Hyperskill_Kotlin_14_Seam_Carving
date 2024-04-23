@@ -1,10 +1,12 @@
 type: choice
 is_multiple_choice: true
 options:
-  - text: Ability to generate unique hash values for each input.
-  - text: Protection against rainbow table attacks.
-  - text: Resistance to brute-force attacks.
-  - text: It returns the same hash value.
+  - text: object::functionName
+  - text: object.functionName
+  - text: object::functionName()
+  - text: ClassName.functionName
+  - text: ClassName::functionName()
+  - text: ClassName::functionName
 files:
   - name: src/Main.kt
     visible: true
@@ -15,7 +17,7 @@ files:
         // put your code here
       }
     learner_created: false
-feedback_link: https://hyperskill.org/learn/step/36630#comment
+feedback_link: https://hyperskill.org/learn/step/15424#comment
 status: Solved
 record: -1
 local_check: false
