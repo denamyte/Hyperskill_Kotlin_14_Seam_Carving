@@ -1,0 +1,34 @@
+type: code
+files:
+  - name: src/Main.kt
+    visible: true
+    highlight_level: NONE
+    text: |-
+      class Person(personName: String?, personAge: Int) {
+          // Do not change this part
+          companion object {
+              const val DEFAULT_NAME = "Unknown"
+              const val MAX_AGE = 130
+              const val MIN_AGE = 0
+          }
+      
+          // Fix this to make its code pass the unit tests
+          val name = personName
+          val age = personAge
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/24368#comment
+status: Solved
+feedback:
+  message: |-
+    <html>[+] Test #1. OK
+    [+] Test #2. OK
+    [+] Test #3. OK
+    [+] Test #4. OK
+    [+] Test #5. OK
+    [+] Test #6. OK
+
+    6 of 6 test(s) passed.</html>
+  time: "Wed, 24 Apr 2024 16:59:01 UTC"
+record: -1
+submission_language: kotlin

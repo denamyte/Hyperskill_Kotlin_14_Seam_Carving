@@ -1,0 +1,35 @@
+<h2>Assertion</h2>
+<div class="step-text">
+<p></p>
+<p>Consider the following <code class="language-kotlin"><span style="color: #000000;">Person</span></code> class:</p>
+<pre><code class="language-kotlin">class Person(
+    val name: String,
+    val age: Int
+) {
+
+    fun getInfo() = "Name: $name, age: $age"
+
+    fun isAllowedToDrive() = age &gt;= 18
+}</code></pre>
+<p>A unit test was implemented to test the class:</p>
+<pre><code class="language-kotlin">import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertTrue
+
+class PersonTest {
+
+    @Test
+    fun `returns the information of a person called John of age 21`() {
+        val john = Person("John", 21)
+        val expected = "Name: John, age: 21"
+        assertEquals(expected, john.getInfo())
+    }
+
+    @Test
+    fun `person of age 18 years is allowed to drive`() {
+        val person = Person("Mark", 18)
+        assertTrue(person.isAllowedToDrive())
+    }
+}</code></pre>
+<p>Which of the statements below is true?</p>
+</div>
