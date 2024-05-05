@@ -1,0 +1,32 @@
+type: code
+files:
+  - name: src/Main.kt
+    visible: true
+    text: |-
+      // Please Do not change this code
+      fun <T> List<T>.isShuffledOf(other: List<T>): Boolean {
+          if (this.size != other.size) return false
+          return this.toSet() == other.toSet()
+      }
+      
+      
+      fun shuffledNumbers(numbers: List<Int>) {
+           // write your code here
+      
+      }
+      
+      fun main() {
+          val list = readln().split(" ").map { it.toInt() }
+      
+          val res = shuffledNumbers(list)
+      
+          println(list.isShuffledOf(res))
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/22640#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 05 May 2024 20:21:12 UTC"
+record: -1
+submission_language: kotlin

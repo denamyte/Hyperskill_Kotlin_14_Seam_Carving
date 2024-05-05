@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: Returns a copy of the original collection in reverse order based on the index
+  - text: Returns the original collection ordered by a predicate
+  - text: Returns a reference to the original collection in reverse order based on the
+      CompareTo method
+  - text: Returns a copy of the original collection in reverse order based on the Comparable
+      Interface
+  - text: '  Returns a reference to the original collection in reverse order based on
+    the index'
+files:
+  - name: src/Main.kt
+    visible: true
+    text: |
+      // You can experiment here, it won’t be checked
+      
+      fun main(args: Array<String>) {
+        // put your code here
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/22634#comment
+status: Solved
+record: -1
+custom_name: Which definition is correct?
+local_check: false
