@@ -1,0 +1,17 @@
+type: code
+files:
+  - name: src/Main.kt
+    visible: true
+    highlight_level: NONE
+    text: |-
+      fun concatenate(list: List<String>, separator: String): String {
+          // Write your code here
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/30915#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Tue, 07 May 2024 23:24:00 UTC"
+record: -1
+submission_language: kotlin
