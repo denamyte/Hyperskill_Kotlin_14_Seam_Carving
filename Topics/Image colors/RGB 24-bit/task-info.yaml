@@ -1,10 +1,5 @@
 type: choice
 is_multiple_choice: false
-options:
-  - text: 3 color mode
-  - text: CMYK
-  - text: Technical color
-  - text: True color
 files:
   - name: src/Main.kt
     visible: true

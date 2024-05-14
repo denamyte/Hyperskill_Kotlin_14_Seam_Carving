@@ -1,17 +1,5 @@
 type: matching
 custom_name: Comprehension
-captions:
-  - let
-  - run
-  - with
-  - also
-  - apply
-options:
-  - Grouping function calls on an object
-  - Object configuration
-  - Executing a lambda on non-null objects
-  - Additional effects
-  - "Running statements where an expression is required: non-extension"
 files:
   - name: src/Main.kt
     visible: true
@@ -25,9 +13,3 @@ files:
 feedback_link: https://hyperskill.org/learn/step/23482#comment
 status: Solved
 record: -1
-ordering:
-  - 0
-  - 1
-  - 2
-  - 3
-  - 4

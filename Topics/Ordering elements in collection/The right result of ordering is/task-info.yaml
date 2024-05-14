@@ -1,10 +1,5 @@
 type: choice
 is_multiple_choice: false
-options:
-  - text: "[ABRACADABRA, AbracadaBRA, Abracadabra, aBracadabra, abracadabra]"
-  - text: "[abracadabra, aBracadabra, Abracadabra, AbracadaBRA, ABRACADABRA]"
-  - text: "[ABRACADABRA, AbracadaBRA, Abracadabra, abracadabra, abracadabra]"
-  - text: "[abracadabra, aBracadabra, AbracadaBRA, Abracadabra, ABRACADABRA]"
 files:
   - name: src/Main.kt
     visible: true

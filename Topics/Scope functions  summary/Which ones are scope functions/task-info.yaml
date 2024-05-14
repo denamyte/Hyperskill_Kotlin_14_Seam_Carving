@@ -1,12 +1,5 @@
 type: choice
-is_multiple_choice: true
-options:
-  - text: scope
-  - text: add
-  - text: with
-  - text: apply
-  - text: let
-  - text: size
+is_multiple_choice: false
 files:
   - name: src/Main.kt
     visible: true

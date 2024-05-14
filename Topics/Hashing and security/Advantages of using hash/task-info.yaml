@@ -1,15 +1,5 @@
 type: choice
-is_multiple_choice: true
-options:
-  - text: "Hash functions are deterministic, meaning that the same input will always\
-    \ produce the same hash value."
-  - text: Hash functions guarantee absolute security and cannot be compromised by any
-      means.
-  - text: "Hash functions are one-way functions that generate a fixed-size output, known\
-    \ as a hash value, from any input data."
-  - text: Hash functions are commonly used in cryptography to verify the integrity of
-      data and passwords.
-  - text: Hash functions can be easily reversed to obtain the original input data.
+is_multiple_choice: false
 files:
   - name: src/Main.kt
     visible: true

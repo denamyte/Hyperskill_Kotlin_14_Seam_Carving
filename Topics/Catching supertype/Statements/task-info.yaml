@@ -1,12 +1,5 @@
 type: choice
-is_multiple_choice: true
-options:
-  - text: The when expression enables handling multiple exceptions within a single catch
-      block.
-  - text: It's impossible to catch multiple exceptions in Kotlin.
-  - text: "If all specific exceptions are handled, there's no need to catch the supertype\
-    \ Exception."
-  - text: The sequence of catch blocks is crucial when handling multiple exceptions.
+is_multiple_choice: false
 files:
   - name: src/Main.kt
     visible: true

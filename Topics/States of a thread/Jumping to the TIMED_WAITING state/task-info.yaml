@@ -1,9 +1,5 @@
 type: choice
-is_multiple_choice: true
-options:
-  - text: anotherThread.join(2000)
-  - text: anotherThread.join()
-  - text: Thread.sleep(2000)
+is_multiple_choice: false
 files:
   - name: src/Main.kt
     visible: true

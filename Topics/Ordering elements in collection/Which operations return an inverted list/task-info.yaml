@@ -1,9 +1,5 @@
 type: choice
-is_multiple_choice: true
-options:
-  - text: a
-  - text: b
-  - text: c
+is_multiple_choice: false
 files:
   - name: src/Main.kt
     visible: true

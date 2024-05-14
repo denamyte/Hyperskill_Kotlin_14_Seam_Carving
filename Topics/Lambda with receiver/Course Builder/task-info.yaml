@@ -1,0 +1,39 @@
+type: code
+files:
+  - name: src/Main.kt
+    visible: true
+    text: |-
+      data class Course(val name: String, val students: List<Student>)
+      data class Student(val name: String)
+      
+      class CourseBuilder(val name: String) {
+          val students = mutableListOf<Student>()
+          fun student(name: String) = students.add(Student(name))
+          fun build() = Course(name, students)
+      }
+      
+      fun buildCourse(name: String, init: CourseBuilder.() -> Unit): Course {
+          // write your code here
+      }
+      
+      fun main() {
+          val (course, a, b) = readLine()!!.split(' ')
+      
+          val myCourse = buildCourse(course) {
+              student(a)
+              student(b)
+              for (i in 1..2) {
+                  student("Anonymous #$i")
+              }
+          }
+      
+          println(myCourse)
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/20953#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Mon, 13 May 2024 20:37:20 UTC"
+record: -1
+submission_language: kotlin

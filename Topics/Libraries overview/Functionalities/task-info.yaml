@@ -1,17 +1,4 @@
 type: matching
-captions:
-  - Retrofit
-  - COIL
-  - Exposed
-  - Ktor
-  - JUnit
-options:
-  - "A popular testing framework for Java, fully compatible with Kotlin."
-  - A framework for building asynchronous servers and clients in connected systems.
-  - "A type-safe HTTP client for Android and Java, allowing you to turn your HTTP API\
-  \ into a Kotlin interface."
-  - A lightweight SQL library providing a typesafe SQL interface.
-  - A library used for image processing.
 files:
   - name: src/Main.kt
     visible: true
@@ -25,9 +12,3 @@ files:
 feedback_link: https://hyperskill.org/learn/step/33990#comment
 status: Unchecked
 record: -1
-ordering:
-  - 0
-  - 1
-  - 2
-  - 3
-  - 4

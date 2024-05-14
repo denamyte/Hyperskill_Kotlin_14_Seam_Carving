@@ -1,11 +1,5 @@
 type: choice
-is_multiple_choice: true
-options:
-  - text: Enums
-  - text: Other annotations
-  - text: Int?
-  - text: Long
-  - text: Strings
+is_multiple_choice: false
 files:
   - name: src/Main.kt
     visible: true

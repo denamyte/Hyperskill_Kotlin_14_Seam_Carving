@@ -13,3 +13,4 @@ content:
   - Ordering elements in collection
   - Retrieve single element
   - StringBuilder
+  - Lambda with receiver

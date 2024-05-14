@@ -1,11 +1,5 @@
 type: choice
-is_multiple_choice: true
-options:
-  - text: Always choose libraries that are large in size as they offer more functionalities.
-  - text: Understand the library's functionality before using it.
-  - text: Use outdated versions of libraries to ensure compatibility with older systems.
-  - text: Only use libraries that are maintained by JetBrains.
-  - text: Check the library's documentation and ensure it has active community support.
+is_multiple_choice: false
 files:
   - name: src/Main.kt
     visible: true

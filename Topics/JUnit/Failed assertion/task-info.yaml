@@ -1,12 +1,5 @@
 type: choice
 is_multiple_choice: false
-options:
-  - text: The test will throw <code>org.opentest4j.AssertionFailedError</code> with
-      a message detailing the cause of the failure
-  - text: The test will throw <code>org.opentest4j.AssertionFailedError</code> without
-      any details
-  - text: The test will throw an <code>AssertionError</code> without any details
-  - text: The test will be passed without any errors
 files:
   - name: src/Main.kt
     visible: true

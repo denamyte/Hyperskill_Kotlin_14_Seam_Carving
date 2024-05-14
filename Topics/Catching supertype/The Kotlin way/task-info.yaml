@@ -1,10 +1,5 @@
 type: choice
 is_multiple_choice: false
-options:
-  - text: Utilizing the <code>when</code> expression.
-  - text: Applying the  <code>||</code> operator.
-  - text: Incorporating the  <code>&amp;&amp;</code> operator.
-  - text: Implementing several  <code>if</code> statements.
 files:
   - name: src/Main.kt
     visible: true

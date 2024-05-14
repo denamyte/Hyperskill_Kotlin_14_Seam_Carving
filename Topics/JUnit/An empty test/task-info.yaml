@@ -1,10 +1,5 @@
 type: choice
 is_multiple_choice: false
-options:
-  - text: The test will be considered successfully passed
-  - text: The test will fail without an error message
-  - text: The code will not compile
-  - text: The test will throw an exception
 files:
   - name: src/Main.kt
     visible: true

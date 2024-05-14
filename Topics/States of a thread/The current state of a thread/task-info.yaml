@@ -1,12 +1,5 @@
 type: choice
 is_multiple_choice: false
-options:
-  - text: WAITING
-  - text: NEW
-  - text: CREATED
-  - text: RUNNABLE
-  - text: NOT_YET_STARTED
-  - text: READY
 files:
   - name: src/Main.kt
     visible: true

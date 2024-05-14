@@ -1,9 +1,4 @@
 type: sorting
-options:
-  - <code>C</code>
-  - <code>A</code>
-  - <code>Exception</code>
-  - <code>B</code>
 files:
   - name: src/Main.kt
     visible: true
@@ -17,8 +12,3 @@ files:
 feedback_link: https://hyperskill.org/learn/step/31361#comment
 status: Solved
 record: -1
-ordering:
-  - 0
-  - 1
-  - 2
-  - 3

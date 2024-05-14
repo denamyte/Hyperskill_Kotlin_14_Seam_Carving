@@ -1,10 +1,5 @@
 type: choice
 is_multiple_choice: false
-options:
-  - text: <code>@Testing</code>
-  - text: <code>@Test</code>
-  - text: <code>@UnitTest</code>
-  - text: <code>@KotlinTest</code>
 files:
   - name: src/Main.kt
     visible: true
