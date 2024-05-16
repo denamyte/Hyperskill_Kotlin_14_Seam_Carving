@@ -1,0 +1,22 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: "Security: it can access and modify private members"
+  - text: 'More flexibility and reusability '
+  - text: "Performance: reflection requires extra time for processing the structure\_\
+    of the code"
+  - text: "Maintenance: it's difficult to find bugs at compile time"
+files:
+  - name: src/Main.kt
+    visible: true
+    text: |
+      // You can experiment here, it won’t be checked
+      
+      fun main(args: Array<String>) {
+        // put your code here
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/25900#comment
+status: Solved
+record: -1
+local_check: false

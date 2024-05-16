@@ -1,5 +1,11 @@
 type: choice
-is_multiple_choice: false
+is_multiple_choice: true
+options:
+  - text: libraries
+  - text: dependencies
+  - text: versions
+  - text: sources
+  - text: plugins
 files:
   - name: src/Main.kt
     visible: true

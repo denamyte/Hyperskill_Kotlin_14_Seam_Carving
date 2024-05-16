@@ -1,5 +1,10 @@
 type: choice
-is_multiple_choice: false
+is_multiple_choice: true
+options:
+  - text: When it is blocked
+  - text: When the thread finishes execution
+  - text: When an uncaught exception occurs
+  - text: When it waits
 files:
   - name: src/Main.kt
     visible: true

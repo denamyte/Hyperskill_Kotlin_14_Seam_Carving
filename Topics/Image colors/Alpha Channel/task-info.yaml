@@ -1,5 +1,9 @@
 type: choice
 is_multiple_choice: false
+options:
+  - text: Colorless
+  - text: Totally opaque
+  - text: Totally transperant
 files:
   - name: src/Main.kt
     visible: true

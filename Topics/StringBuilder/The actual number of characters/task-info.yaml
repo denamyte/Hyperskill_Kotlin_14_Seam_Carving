@@ -1,5 +1,10 @@
 type: choice
 is_multiple_choice: false
+options:
+  - text: <code>capacity</code>
+  - text: <code>volume</code>
+  - text: <code>length</code>
+  - text: <code>size</code>
 files:
   - name: src/Main.kt
     visible: true

@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: Observe and modify itself at runtime
+  - text: Observe and modify itself at compile time
+  - text: 'Be faster and more performant '
+  - text: Be clearer and more safe
+files:
+  - name: src/Main.kt
+    visible: true
+    text: |
+      // You can experiment here, it won’t be checked
+      
+      fun main(args: Array<String>) {
+        // put your code here
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/25898#comment
+status: Solved
+record: -1
+local_check: false

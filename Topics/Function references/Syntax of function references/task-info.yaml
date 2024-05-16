@@ -1,5 +1,9 @@
 type: choice
 is_multiple_choice: false
+options:
+  - text: ::functionName
+  - text: this::functionName
+  - text: this.functionName()
 files:
   - name: src/Main.kt
     visible: true

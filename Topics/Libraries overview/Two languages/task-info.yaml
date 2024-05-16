@@ -1,5 +1,11 @@
 type: choice
 is_multiple_choice: false
+options:
+  - text: "No, Java libraries cannot be used in Kotlin."
+  - text: "It depends on the library, some might work with Kotlin, others may not."
+  - text: "Yes, but first the Java library needs to be rewritten in Kotlin."
+  - text: "Yes, Kotlin is fully interoperable with Java, allowing the use of Java libraries\
+    \ without any modifications."
 files:
   - name: src/Main.kt
     visible: true

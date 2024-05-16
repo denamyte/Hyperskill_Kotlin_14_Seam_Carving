@@ -13,3 +13,20 @@ files:
 feedback_link: https://hyperskill.org/learn/step/21737#comment
 status: Solved
 record: -1
+rows:
+  - Is made up of a grid of pixels
+  - Can be scaled up or down to different resolutions without distortion
+  - Is made up of points connected by lines and curves
+  - Is used for encoding visual content
+columns:
+  - Raster graphic
+  - Vector graphic
+selected:
+  - - false
+    - false
+  - - false
+    - false
+  - - false
+    - false
+  - - false
+    - false

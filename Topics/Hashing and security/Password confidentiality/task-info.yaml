@@ -1,5 +1,12 @@
 type: choice
 is_multiple_choice: false
+options:
+  - text: Hash functions can be reversed to obtain the original input data from the
+      hash value.
+  - text: Hash functions always produce unique hash values for different input data.
+  - text: Hash functions provide encryption and confidentiality for sensitive data.
+  - text: Hash functions are one-way functions that convert input data of any size into
+      a fixed-size hash value.
 files:
   - name: src/Main.kt
     visible: true

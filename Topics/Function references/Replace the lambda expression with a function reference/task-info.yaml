@@ -1,5 +1,12 @@
 type: choice
 is_multiple_choice: false
+options:
+  - text: s::uppercase()
+  - text: String::uppercase()
+  - text: s.uppercase
+  - text: String::uppercase
+  - text: s::uppercase
+  - text: String.uppercase
 files:
   - name: src/Main.kt
     visible: true

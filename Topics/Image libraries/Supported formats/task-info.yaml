@@ -1,5 +1,10 @@
 type: choice
-is_multiple_choice: false
+is_multiple_choice: true
+options:
+  - text: PNG
+  - text: GIF
+  - text: WAV
+  - text: JPEG
 files:
   - name: src/Main.kt
     visible: true

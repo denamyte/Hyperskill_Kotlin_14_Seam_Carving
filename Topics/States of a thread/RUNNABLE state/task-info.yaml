@@ -1,5 +1,11 @@
 type: choice
 is_multiple_choice: false
+options:
+  - text: It implements the Runnable interface
+  - text: It is ready to run but not executed yet
+  - text: "It is executing in the JVM, but it may be waiting for resources from the\
+    \ OS – for example, from the processor"
+  - text: It has completed the task and is going to terminate soon
 files:
   - name: src/Main.kt
     visible: true

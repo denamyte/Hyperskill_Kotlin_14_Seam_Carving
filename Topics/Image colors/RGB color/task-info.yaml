@@ -1,5 +1,10 @@
 type: choice
 is_multiple_choice: false
+options:
+  - text: Magenta
+  - text: Red
+  - text: Grey
+  - text: Yellow
 files:
   - name: src/Main.kt
     visible: true

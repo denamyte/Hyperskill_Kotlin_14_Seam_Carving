@@ -1,5 +1,10 @@
 type: choice
 is_multiple_choice: false
+options:
+  - text: java.awt.Image
+  - text: javax.imageio.ImageIO
+  - text: java.awt.image.ColorModel
+  - text: java.awt.Graphics2D
 files:
   - name: src/Main.kt
     visible: true

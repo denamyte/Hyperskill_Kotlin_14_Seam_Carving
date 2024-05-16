@@ -1,5 +1,13 @@
 type: choice
-is_multiple_choice: false
+is_multiple_choice: true
+options:
+  - text: Building all scope functions
+  - text: It enables the access to visible methods and properties of a receiver without
+      any qualifier
+  - text: Accessing private methods of a receiver object
+  - text: You can access the members of that receiver object using the expression "this"
+  - text: Using "it" and "this" interchangeably
+  - text: You can create type-safe builders or DSLs
 files:
   - name: src/Main.kt
     visible: true

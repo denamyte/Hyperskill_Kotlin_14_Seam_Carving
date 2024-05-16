@@ -1,4 +1,14 @@
 type: matching
+captions:
+  - <code>assertTrue</code>
+  - <code>assertFalse</code>
+  - <code>assertNull</code>
+  - <code>assertEquals</code>
+options:
+  - Checks that the supplied argument is <code>true</code>.
+  - Checks that the two supplied arguments are equal
+  - Checks that the supplied argument is <code>false</code>.
+  - Checks that supplied argument is <code>null</code>
 files:
   - name: src/Main.kt
     visible: true
@@ -12,3 +22,8 @@ files:
 feedback_link: https://hyperskill.org/learn/step/24360#comment
 status: Unchecked
 record: -1
+ordering:
+  - 0
+  - 1
+  - 2
+  - 3

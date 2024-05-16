@@ -1,5 +1,10 @@
 type: choice
 is_multiple_choice: false
+options:
+  - text: a scan pattern
+  - text: a list of pixels
+  - text: a matrix of pixels
+  - text: a file of pixels
 files:
   - name: src/Main.kt
     visible: true

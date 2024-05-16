@@ -1,5 +1,12 @@
 type: choice
-is_multiple_choice: false
+is_multiple_choice: true
+options:
+  - text: object::functionName
+  - text: object.functionName
+  - text: object::functionName()
+  - text: ClassName.functionName
+  - text: ClassName::functionName()
+  - text: ClassName::functionName
 files:
   - name: src/Main.kt
     visible: true

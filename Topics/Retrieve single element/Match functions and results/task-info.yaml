@@ -1,4 +1,18 @@
 type: matching
+captions:
+  - elementAt()
+  - getOrElse()
+  - find()
+  - first()
+  - getOrNull()
+options:
+  - Returns the first element in a non-empty collection
+  - Returns the element at the specific index position or throws an exception
+  - Returns the first element of a collection according to a predicate or null if it
+    does not exist
+  - Returns null when the index position is out of the collection bounds
+  - Returns the result of the lambda if the index position is out of the collection
+    bounds
 files:
   - name: src/Main.kt
     visible: true
@@ -12,3 +26,9 @@ files:
 feedback_link: https://hyperskill.org/learn/step/24875#comment
 status: Solved
 record: -1
+ordering:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
