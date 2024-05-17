@@ -1,0 +1,17 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: The parameter must not accept variable number of arguments and must have no
+      default value.
+  - text: They must have a single parameter.
+  - text: They must be member functions or extension functions.
+  - text: The parameter must always be non-null.
+  - text: ' Functions can only be from the standard library.'
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/26466#comment
+status: Solved
+record: -1
+local_check: false

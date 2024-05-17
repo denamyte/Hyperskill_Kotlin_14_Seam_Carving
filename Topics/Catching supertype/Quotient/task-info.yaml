@@ -2,21 +2,6 @@ type: code
 files:
   - name: src/Main.kt
     visible: true
-    text: |-
-      fun main() {
-          val numerator = readln()
-          val denominator = readln()
-          try {
-              val result = numerator.toInt() / denominator.toInt()
-              println(result)
-          } catch (e: ArrayIndexOutOfBoundsException) {
-              println("Numerator and denominator must be valid integers.")
-          } catch (e: IllegalArgumentException) {
-              println("Cannot divide by zero!")
-          } catch (e: Exception) {
-              println(e.message)
-          }
-      }
     learner_created: false
 feedback_link: https://hyperskill.org/learn/step/31363#comment
 status: Solved

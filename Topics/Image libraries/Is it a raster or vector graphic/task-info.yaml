@@ -3,12 +3,6 @@ custom_name: Is it a raster or vector graphic?
 files:
   - name: src/Main.kt
     visible: true
-    text: |
-      // You can experiment here, it won’t be checked
-      
-      fun main(args: Array<String>) {
-        // put your code here
-      }
     learner_created: false
 feedback_link: https://hyperskill.org/learn/step/21737#comment
 status: Solved

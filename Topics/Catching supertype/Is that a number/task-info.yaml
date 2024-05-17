@@ -3,21 +3,6 @@ custom_name: Is that a number?
 files:
   - name: src/Main.kt
     visible: true
-    text: |-
-      fun main() {
-          val input = readlnOrNull()
-          try {
-      
-              // Write your solution here
-      
-          } catch (e: Exception) {
-              when (e) {
-                  is NumberFormatException -> println("The input must be a valid integer.")
-                  is IllegalArgumentException -> println("The number must be non-negative.")
-                  else -> println("Unknown error has happened!")
-              }
-          }
-      }
     learner_created: false
 feedback_link: https://hyperskill.org/learn/step/31365#comment
 status: Solved

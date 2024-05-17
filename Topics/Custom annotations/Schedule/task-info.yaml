@@ -3,7 +3,6 @@ files:
   - name: src/Main.kt
     visible: true
     highlight_level: NONE
-    text: "annotation class Schedule(val time: String)"
     learner_created: false
 feedback_link: https://hyperskill.org/learn/step/23248#comment
 status: Solved

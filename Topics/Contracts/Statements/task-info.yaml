@@ -1,0 +1,16 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: The compiler sometimes ignores contracts and doesn't trust them.
+  - text: The binary representation of contracts is unstable.
+  - text: The syntax for contracts is currently unstable and may change in the future.
+  - text: The contract call must be the last statement in the function body.
+  - text: Contracts can only be applied to top-level functions with a body.
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/33980#comment
+status: Solved
+record: -1
+local_check: false

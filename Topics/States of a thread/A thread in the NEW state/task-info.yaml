@@ -3,12 +3,6 @@ files:
   - name: src/Main.kt
     visible: true
     highlight_level: NONE
-    text: |-
-      import kotlin.concurrent.thread
-      
-      fun createThreadInNewState(): Thread {
-          //implement the function
-      }
     learner_created: false
 feedback_link: https://hyperskill.org/learn/step/20162#comment
 status: Solved

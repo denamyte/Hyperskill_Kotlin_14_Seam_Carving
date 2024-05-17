@@ -1,0 +1,156 @@
+<div class="step-text">
+<p><a class="theory-lookup not-relevant" href="/learn/step/0" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, reflection is a mechanism that allows you to inspect, modify, and manipulate the internal structure of a class or an object during runtime. | It opens up the possibility of dynamic programming and can be useful in various situations, such as developing libraries, frameworks, or tools. Reflection in Kotlin allows you to inspect classes, interfaces, fields, and methods at runtime, without knowing their names at compile time. Reflection is particularly useful when working with higher-order functions, as it allows you to get information about the type of these functions and their parameters. Reflection can also be used to implement design patterns dynamically, automate repetitive code, and perform more complex tasks. However, like any powerful tool, reflection has its benefits and limitations.">Reflection</a> is a term used to describe a mechanism that allows us to inspect, modify, and manipulate the <a class="theory-lookup not-relevant" href="/learn/step/0" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, an inner class is a special case of a nested class that can access the members of its outer class. | It is used to hide some code from other classes and increase encapsulation. For example, if you have a class representing a cat, and you want a cat to have a ribbon bow, you can create a new inner class for the bow. This class should be quite small and specific, and you know you won't need a bow without a cat. To use an inner class, you must first instantiate the outer class, as inner classes are associated with an instance of their enclosing class.">internal</a> <a class="theory-lookup" href="/learn/step/34300" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, a structure is a complex structure that can store data and perform actions. | It is a part of memory that holds information, and variables and values simply point to this object. An example of a structure is a message that contains both a sequence of symbols and the size of the sequence (length of the message). In Kotlin, something that allows you to access the state of a structure is called a property. You can access the properties of a structure by putting a dot and writing the name of the property after the object. Structures help to organize the data you store on a disk by arranging files into directories, creating a file hierarchy.">structure</a> of a class or an object at runtime. Reflection opens up the possibilities of dynamic programming and can be useful in many situations, such as developing libraries, frameworks, or tools.</p>
+<h5 id="reflection-in-java">Reflection in Java</h5>
+<p>In Java, reflection has been a cornerstone for achieving dynamic programming. It allows developers to inspect classes, interfaces, fields, and methods at runtime, without knowing their names at compile time.</p>
+<pre><code class="language-java">Class stringClass = String.class;
+Method[] methods = stringClass.getMethods();
+</code></pre>
+<h5 id="need-for-kotlin-specific-reflection">Need for Kotlin-specific reflection</h5>
+<p>While Java's reflection <a class="theory-lookup" href="/learn/step/30909" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, capacity refers to the maximum number of elements that a StringBuilder object can hold. | It is determined by the constructor used to create the object. If the default constructor is used, the initial capacity will be 16 characters. As elements are added, if the length exceeds the current capacity, the capacity will automatically increase to accommodate the additional elements. The new capacity is calculated using a specific formula. You can specify the capacity of the StringBuilder at the time of creation by passing an integer to the constructor. It is important to note that StringBuilder is a Java class, but can be used directly in Kotlin without importing anything.">capacity</a> is powerful, Kotlin introduces additional language features, such as <a class="theory-lookup" href="/learn/step/8526" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, a data class is a special type of class that automatically provides implementations of several common methods, such as `equals()`, `hashCode()`, and `toString()`, based on the properties of the class. | This is done using the `data` keyword before the class definition. This simplifies the code required for standard operations and allows for easier comparison of objects based on their properties. Additionally, data classes automatically provide a `copy()` function, which creates a shallow copy of the object, and `componentN()` functions, which can be used for destructuring declarations.">data classes</a>, <a class="theory-lookup" href="/learn/step/6621" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, an extension function is a function that can be called on an existing class as if it were a member of that class, but is actually defined outside of the class. | It allows developers to add new functionality to existing classes without modifying the original class code. Extension functions take the receiver object (the class they are extending) as the first argument, which is implicitly passed. They can take arguments and return values like regular functions. If a class has both a member function and an extension function with the same name and signature, the member function will take precedence.">extension functions</a>, nullability, etc., which require additional reflection capabilities. This necessitates the use of the Kotlin reflection library, which allows for the introspection of Kotlin-specific features. In Kotlin, reflection is supported through a set of functions and types defined in the kotlin.reflect package. This package provides the ability to navigate language elements, such as functions, properties, and classes, which are treated as first-class citizens in Kotlin.</p>
+<p>To use reflection in a Gradle or Maven project, add the dependency on <code class="language-java">kotlin-reflect</code>:</p>
+<p><strong>In Gradle:</strong></p>
+<p><em>Kotlin</em></p>
+<pre><code class="language-java">dependencies {
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.8.22")
+}</code></pre>
+<p><em>Groovy</em></p>
+<pre><code class="language-java">dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.8.22"
+}</code></pre>
+<p><strong>In Maven:</strong></p>
+<pre><code class="language-java">&lt;dependencies&gt;
+  &lt;dependency&gt;
+      &lt;groupId&gt;org.jetbrains.kotlin&lt;/groupId&gt;
+      &lt;artifactId&gt;kotlin-reflect&lt;/artifactId&gt;
+  &lt;/dependency&gt;
+&lt;/dependencies&gt;</code></pre>
+<p>Let's consider an example where we would typically use reflection and show how it could be <a class="theory-lookup not-relevant" href="/learn/step/0" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, an implementation of an interface refers to the concrete realization of an interface's declared methods and properties by a class. | Interfaces define a contract for the implementing class, outlining the required method and property the implementing class must have. This allows for abstraction and encapsulation in object-oriented programming, where a class implements the interface's functionality in its own way, as long as it adheres to the contract. This provides a way to generalize and clean up code by first stating the expected functionality, and then creating a structure that can be relied upon later.">implemented</a> without using reflection in Kotlin. We can use an example of <a class="theory-lookup not-relevant" href="/learn/step/0" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, an object is an instance of a class that stores data and defines its behavior. | It is a complex structure that has a state, which is the data stored in the object, and a behavior, which is defined by the functions associated with the object. The state of an object can be accessed through properties, which are accessed by putting a dot and the property name after the object. Objects are stored in memory, and variables and values simply point to these objects.">object</a> <a class="theory-lookup" href="/learn/step/23780" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, mapping refers to the process of transforming one set of data into another set of data with the same or different structure. | It is often used in the context of image processing, where individual pixels or groups of pixels are modified to achieve a desired effect, such as applying a filter to an image. In the context of data processing, mapping is used to convert data from one format to another. For example, mapping can be used to convert a list of objects into a map, where each object is associated with a unique key. This can be useful for looking up specific objects in a list based on their associated key. In Kotlin, mapping is often used in conjunction with functional programming concepts, such as the `map` function, which applies a given function to each element in a collection and returns a new collection containing the results.">mapping</a> for this purpose.</p>
+<p>Let's say we have two data classes:</p>
+<pre><code class="language-kotlin">data class Source(val name: String, val age: Int)
+data class Target(var name: String? = null, var age: Int = 0)
+</code></pre>
+<p>We also have an instance of <code class="language-java">Source</code>:</p>
+<pre><code class="language-java">val source = Source("John", 20)
+</code></pre>
+<p>Without using reflection, if we want to map the properties of <code class="language-java">source</code> to a new instance of <code class="language-java">Target</code>, we would have to do it manually like this:</p>
+<pre><code class="language-kotlin">val target = Target().apply {
+    name = source.name
+    age = source.age
+}
+</code></pre>
+<p>Now <code class="language-java">target</code> will have the same property values as <code class="language-java">source</code>. This kind of manual mapping works fine when we have only a few properties to map, but it can become cumbersome and error-prone when we have many properties or when we don't know the properties at compile time.</p>
+<p>That's where reflection can be handy, as it allows us to automate the mapping process:</p>
+<pre><code class="language-kotlin">fun &lt;S : Any, T : Any&gt; map(source: S, target: T) {
+    val sourceProperties = source::class.memberProperties
+    val targetProperties = target::class.memberProperties
+
+    sourceProperties.forEach { sourceProperty -&gt;
+        targetProperties.find { it.name == sourceProperty.name }?.let { targetProperty -&gt;
+            if (targetProperty is KMutableProperty&lt;*&gt;) {
+                targetProperty.setter.call(target, sourceProperty.getter.call(source))
+            }
+        }
+    }
+}
+
+val target = Target()
+map(source, target)
+</code></pre>
+<p>Now the <code class="language-java">map</code> function can map the properties of any two objects, given that the target object has mutable properties with the same names as the source object's properties. This illustrates the power and flexibility of reflection in Kotlin. Let's now look at it in more detail.</p>
+<h5 id="using-reflection-in-kotlin">Using reflection in Kotlin</h5>
+<p>Kotlin distinguishes between the concepts of "class" and "type". The class refers to the definition of the class in code, while the type refers to a specific use of the class.</p>
+<pre><code class="language-java">val stringClass = String::class
+val stringType = stringClass.starProjectedType</code></pre>
+<p>Kotlin reflection involves several key classes:</p>
+<ul>
+<li><code class="language-java">KClass</code>: it corresponds to a class in Kotlin.</li>
+<li><code class="language-java">KCallable</code>: it is a common entity for <code class="language-java">KFunction</code> and <code class="language-java">KProperty</code>.</li>
+<li><code class="language-java">KFunction</code>: it corresponds to a function in Kotlin.</li>
+<li><code class="language-java">KProperty</code>: it corresponds to a property in Kotlin.</li>
+</ul>
+<p>These classes allow us to access and manipulate various aspects of Kotlin classes and functions at runtime.</p>
+<pre><code class="language-java">val function = ::println
+println(function is KFunction)  // true
+</code></pre>
+<h5 id="basic-operations-with-reflection-in-kotlin">Basic operations with reflection in Kotlin</h5>
+<p><strong>1) Instantiating a class</strong></p>
+<p>With reflection, we can dynamically instantiate classes:</p>
+<pre><code class="language-java">val stringClass = String::class
+val instance = stringClass.createInstance()  // creates a new instance of the String class
+</code></pre>
+<p><strong>2) Dynamically invoking methods</strong></p>
+<p>We can also dynamically invoke methods and functions:</p>
+<pre><code class="language-java">val function = String::toLowerCase
+val result = function.call("HELLO")  // "hello"
+</code></pre>
+<p><strong>3) Working with fields and properties</strong></p>
+<p>Reflection allows us to get and set <a class="theory-lookup" href="/learn/step/10511" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, a property value refers to the data or state stored in a property. | When you define a property, it automatically has a backing field generated by the compiler to store the value of the property. However, you can use a backing property to replace the backing field with custom getter and setter methods, allowing you to control how the property value is accessed and modified. This provides an extra level of encapsulation and flexibility. Property overriding is a feature in Kotlin that allows you to modify the behavior or value of a property in a derived class, providing a new layer of flexibility.">property values</a>:</p>
+<pre><code class="language-java">data class Person(val name: String, var age: Int)
+
+val person = Person("John", 20)
+val ageProperty = Person::age
+println(ageProperty.get(person))  // 20
+ageProperty.set(person, 21)
+println(person.age)  // 21
+</code></pre>
+<h5 id="more-complex-operations-with-reflection-in-kotlin">More complex operations with reflection in Kotlin</h5>
+<p><strong>1) Working with <a class="theory-lookup" href="/learn/step/14698" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, a generic is a type parameter that is used in a class or function declaration to allow for the creation of reusable and abstract code. | By specifying a type parameter within angle brackets, you can create a generic class that can work with various data types without the need to duplicate code for each type. This is particularly useful when creating classes or functions that need to handle different data types but perform similar operations. The type parameter can be used in methods and properties of the class, and the actual type is determined when an object is created from the generic class.">generics</a></strong></p>
+<p>Kotlin reflection also supports working with <a class="theory-lookup" href="/learn/step/14698" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, a type parameter is a named type that is used in a class, interface, or function declaration to make it work with different data types. | Type parameters are often used in generic programming, which allows for versatility and reusability of code. They are typically named using a single letter, such as T, E, K, or V, to distinguish them from regular class names. When creating an instance of a generic class, you need to provide a concrete type as a type argument, which can be inferred by the compiler if it's a standard type. Once the type argument is specified, you can invoke methods of the class using the provided type. If the class has multiple type parameters, you should specify them in order. Type parameters can be used as ordinary types inside the class body, such as a type for a field, constructor argument type, instance method argument, or return type.">type parameters</a>, allowing us to get information about generics:</p>
+<pre><code class="language-java">val list = listOf(1, 2, 3)
+val type = list::class.typeParameters
+println(type)  // [E]
+</code></pre>
+<p><strong>2) Working with <a class="theory-lookup" href="/learn/step/12668" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, a higher-order function is a function that can take one or more functions as parameters or return a function as its result. | This feature allows for more modular, reusable, and maintainable code, as it promotes functional programming patterns and prevents issues with shared state in concurrent environments. Higher-order functions can be used to simplify complex situations and enhance code organization through functional decomposition. They are an essential part of Kotlin's support for functional programming, along with other features like lambda expressions, anonymous functions, and monads.">higher-order functions</a></strong></p>
+<p>When we work with higher-order functions, reflection allows us to get information about the types of these functions and their parameters:</p>
+<pre><code class="language-java">fun foo(block: () -&gt; Unit) {
+    block()
+}
+
+val function = ::foo
+val parameter = function.parameters.first()
+println(parameter.type)  // Function0&lt;kotlin.Unit&gt;
+</code></pre>
+<h5 id="features-and-limitations-of-reflection-in-kotlin">Features and limitations of reflection in Kotlin</h5>
+<p>Like any powerful tool, reflection has its benefits and limitations.</p>
+<p><strong>1)</strong> <strong>Using reflection to implement the "Singleton" pattern</strong></p>
+<p>Reflection allows us to use various <a class="theory-lookup not-relevant" href="/learn/step/0" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, a design pattern is a reusable solution to a common problem that occurs in software design. | It provides a general template for how to solve a problem that can be applied in many different situations. Two examples of design patterns related to dependency management are the Dependency Injection pattern and the Service Locator pattern. The Dependency Injection pattern involves creating a separate component responsible for supplying required dependencies to other components, while the Service Locator pattern involves setting up a central component in charge of locating and providing necessary dependencies to other components.">design patterns</a> in a more dynamic style. For example, we can use reflection to implement the Singleton pattern:</p>
+<pre><code class="language-java">object Singleton
+
+fun &lt;T : Any&gt; singletonInstance(klass: KClass&lt;T&gt;): T? {
+    return if (klass.objectInstance != null) klass.objectInstance else null
+}
+
+val instance = singletonInstance(Singleton::class)
+println(instance == Singleton)  // true
+</code></pre>
+<p><strong>2) Using reflection for automatic object mapping</strong></p>
+<p>Reflection also allows us to automate some tasks that would otherwise require lots of repetitive code. One such example is object mapping:</p>
+<pre><code class="language-java">data class Source(val name: String, val age: Int)
+data class Target(var name: String? = null, var age: Int = 0)
+
+fun &lt;S : Any, T : Any&gt; map(source: S, target: T) {
+    val sourceProperties = source::class.memberProperties
+    val targetProperties = target::class.memberProperties
+
+    sourceProperties.forEach { sourceProperty -&gt;
+        targetProperties.find { it.name == sourceProperty.name }?.let { targetProperty -&gt;
+            if (targetProperty is KMutableProperty&lt;*&gt;) {
+                targetProperty.setter.call(target, sourceProperty.getter.call(source))
+            }
+        }
+    }
+}
+
+val source = Source("John", 20)
+val target = Target()
+
+map(source, target)
+
+println(target)  // Target(name=John, age=20)
+</code></pre>
+<p>Here, the <code class="language-java">map</code> function takes a <code class="language-java">source</code> object and a <code class="language-java">target</code> object. It then retrieves the properties of both objects using reflection. For each source property, it finds the matching target property and sets its value to the source property's value. This function will work for any pair of classes with matching property names, demonstrating the power and flexibility of reflection.</p>
+<p><strong>3) Limitations of reflection</strong></p>
+<p>Using reflection can slow down the execution compared to regular <a class="theory-lookup not-relevant" href="/learn/step/0" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, an operation generally refers to a process or action that is performed on data, often as part of a larger computation or process. | This can include arithmetic operations such as addition, subtraction, and multiplication, as well as other types of operations such as reading or modifying the value of a variable. In the context of multi-threading, an operation can refer to a series of steps that are performed as part of a larger task. If these steps are not atomic (i.e., they cannot be interrupted or interfered with by other threads), then there is a risk of thread interference, where the sequence of steps performed by multiple threads may overlap and cause unexpected results. In the context of flow processing, an operation can refer to a transformation that is applied to a flow of data to modify the data it emits. This can include operations such as filtering, mapping, or reducing the data in some way.">operations</a>, since it requires additional computations at runtime. Reflection can also pose security issues, especially when working with <a class="theory-lookup" href="/learn/step/31660" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, the `private` keyword is used to restrict access to a class member, making it only accessible within the same class. | This is used to protect the member from being tampered with, and it ensures that the member can only be modified within the class itself. As a result, the member cannot be accessed or changed from outside the class, and any attempt to output its value will result in an error. The `private` modifier can also be applied to a constructor, making it accessible only within the same class, and requiring the use of a secondary constructor to create an object of the class from outside.">private</a> class members. Moreover, not all classes support instantiation through reflection: for example, <a class="theory-lookup" href="/learn/step/30148" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, an anonymous object is an object that is created without a class definition. | It can implement an interface or inherit from a class, but it does not require a separate class file or declaration. Anonymous objects have a limited scope and can be used as a variable value by explicitly specifying the variable type. They are often used for event handling, especially in user interfaces, and can also be used as comparators. Additionally, anonymous objects can be used as a replacement for singletons in some cases. Object expressions, which are similar to anonymous objects, allow for the creation of anonymous objects for various tasks such as implementing interfaces, handling events, or sorting collections.">anonymous</a> and <a class="theory-lookup" href="/learn/step/14723" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, an inner class is a special case of a nested class that can access the members of its outer class. | It carries a reference to an object of its outer class, which means that to use an inner class, we must first instantiate an outer class. The main idea of inner classes is to hide some code from other classes and increase encapsulation. An inner class is associated with an instance of their enclosing class, and its constructor is called with an instance of the containing class. This increases the encapsulation of the code, making it accessible only through the outer class.">inner classes</a>.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>In Kotlin, reflection is a powerful tool for inspecting and manipulating code at runtime. It offers a great deal of flexibility and can be useful in many scenarios, including automatic object mapping, implementing design patterns, creating libraries and frameworks, and much more. However, it's important to be mindful of some limitations and issues associated with using reflection, including potential performance and security concerns. Reflection should be used consciously and only where it is truly necessary. In this topic, we've reviewed the basics of working with reflection in Kotlin, including basic operations and more complex issues, such as working with generics and higher-order functions.</p>
+</div>

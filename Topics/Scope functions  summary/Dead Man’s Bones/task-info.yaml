@@ -2,11 +2,6 @@ type: code
 files:
   - name: src/Main.kt
     visible: true
-    text: "data class Microphone(\n    var track: String = \"\",\n    var frequency:\
-    \ Int = 0,\n    var effect: String = \"\",\n    var sensitivity: Double = 0.0\n\
-    )\n\nfun main() {\n    val microphone = Microphone()\n\n    // Write scope function\
-    \ that receive new settings from standard input and set up them to the Microphone\n\
-    \    microphone. \n\n    println(microphone)\n}"
     learner_created: false
 feedback_link: https://hyperskill.org/learn/step/23485#comment
 status: Solved

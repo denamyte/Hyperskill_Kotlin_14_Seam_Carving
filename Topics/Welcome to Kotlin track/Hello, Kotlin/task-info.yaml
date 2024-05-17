@@ -3,7 +3,6 @@ custom_name: "Hello, Kotlin!"
 files:
   - name: src/Main.kt
     visible: true
-    text: '#write your code here'
     learner_created: false
 feedback_link: https://hyperskill.org/learn/step/38183#comment
 status: Solved

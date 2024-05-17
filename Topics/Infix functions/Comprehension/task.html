@@ -1,0 +1,9 @@
+<div class="step-text">
+<p></p>
+<p>What is the result of the following code using infix functions?</p>
+<pre><code class="language-kotlin">infix fun Int.mod(x: Int): Int = this % x
+infix fun IntRange.add(x: Int): IntRange = this.first + x..this.last + x
+fun main() {
+    println(167 mod 5 in 3..4 add 2)
+}</code></pre>
+</div>

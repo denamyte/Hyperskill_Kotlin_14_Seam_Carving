@@ -3,12 +3,6 @@ files:
   - name: src/Main.kt
     visible: true
     highlight_level: NONE
-    text: |-
-      fun reverseSentence(sentence: String): String {
-          val words = sentence.split(" ")
-      
-          // Write you code here
-      }
     learner_created: false
 feedback_link: https://hyperskill.org/learn/step/30919#comment
 status: Solved

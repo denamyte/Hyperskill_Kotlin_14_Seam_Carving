@@ -15,3 +15,7 @@ content:
   - StringBuilder
   - Lambda with receiver
   - Introduction to Kotlin reflection
+  - Infix functions
+  - Reflection
+  - Contracts
+  - Lazy initialization

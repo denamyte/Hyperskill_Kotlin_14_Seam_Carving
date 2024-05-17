@@ -2,15 +2,6 @@ type: code
 files:
   - name: src/Main.kt
     visible: true
-    text: |-
-      fun main() {
-          val title = readln()
-          val filmTitle = title
-              .removePrefix("he-he-he")
-              .<scope function> { "$it with great actor Ryan Gosling" }
-              .uppercase()
-              .<scope function>(::println)
-      }
     learner_created: false
 feedback_link: https://hyperskill.org/learn/step/23487#comment
 status: Solved

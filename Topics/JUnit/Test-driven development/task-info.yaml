@@ -3,19 +3,6 @@ files:
   - name: src/Main.kt
     visible: true
     highlight_level: NONE
-    text: |-
-      class Person(personName: String?, personAge: Int) {
-          // Do not change this part
-          companion object {
-              const val DEFAULT_NAME = "Unknown"
-              const val MAX_AGE = 130
-              const val MIN_AGE = 0
-          }
-      
-          // Fix this to make its code pass the unit tests
-          val name = personName
-          val age = personAge
-      }
     learner_created: false
 feedback_link: https://hyperskill.org/learn/step/24368#comment
 status: Solved

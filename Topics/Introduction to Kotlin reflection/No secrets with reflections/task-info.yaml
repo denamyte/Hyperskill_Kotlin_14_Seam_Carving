@@ -3,10 +3,6 @@ files:
   - name: src/Main.kt
     visible: true
     highlight_level: NONE
-    text: |-
-      fun main() {
-      
-      }
     learner_created: false
 feedback_link: https://hyperskill.org/learn/step/25903#comment
 status: Solved
