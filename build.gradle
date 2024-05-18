@@ -5,7 +5,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.10"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$hs.kotlin.version"
     }
 }
 
@@ -41,7 +41,6 @@ subprojects {
 
     dependencies {
         testImplementation 'com.github.hyperskill:hs-test:release-SNAPSHOT'
-        implementation "org.jetbrains.kotlin:kotlin-reflect:1.9.10"
     }
 
     configurations.all {
