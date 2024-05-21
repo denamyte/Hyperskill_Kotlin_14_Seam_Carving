@@ -1,0 +1,15 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: It prevents overriding the method or inheriting the class.
+  - text: It allows you to inherit the class.
+  - text: It allows you to override the method.
+  - text: It allows you to change the value of the variable.
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/29007#comment
+status: Solved
+record: -1
+local_check: false

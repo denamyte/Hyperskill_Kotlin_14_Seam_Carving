@@ -1,0 +1,18 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: "\"private\" allows access to class members within the same class and its\
+    \ subclasses, while \"protected\" allows access everywhere in the program."
+  - text: "\"private\" allows access to class members in any part of the program, while\
+    \ \"protected\" restricts access to within the same class."
+  - text: Both "private" and "protected" provide the same level of access restriction.
+  - text: "\"private\" allows access to class members within the same class, while \"\
+    protected\" allows access in subclasses as well."
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/31662#comment
+status: Solved
+record: -1
+local_check: false

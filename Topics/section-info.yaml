@@ -20,3 +20,5 @@ content:
   - Contracts
   - Lazy initialization
   - Overriding constructors
+  - Final members
+  - Visibility modifiers for members

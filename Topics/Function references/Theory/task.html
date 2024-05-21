@@ -50,7 +50,7 @@ val personFun: () -&gt; String = person::printFullName
 <p>Now you see how you can easily turn a function into an object by using a reference to it. <br/>This is a very useful skill in programming, and when you start working on serious projects, it will help you with many problems.</p>
 <p>Let's see some other possibilities of function references.</p>
 <h5 id="standard-classes-and-function-reference">Standard classes and function reference</h5>
-<p>Function references also work with functions from Kotlin standard classes. Let's see an example.</p>
+<p>Function references also work with functions from Kotlin standard classes. <a class="theory-lookup" href="/learn/step/22875" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, `let` is a scope function that creates a temporary scope for an object and allows you to work with it using the keyword `it` or `this` within the lambda. | It is often used when you want to introduce a local variable with a limited scope or perform some operations on the object without changing its meaning or behavior. `Let` is an extension function that takes the context object as its receiver and returns the result of the lambda. It is useful when you need to skip the current iteration of a loop with your own condition.">Let</a>'s see an example.</p>
 <p>We create a reference to the standard function <code class="language-kotlin">dec</code> of the <code class="language-kotlin">Int</code> class. The function <code class="language-kotlin">dec</code> decreases the number by one (decrement).</p>
 <pre><code class="language-kotlin">val dec: (Int) -&gt; Int = Int::dec</code></pre>
 <p>Here, <code class="language-kotlin">Int::dec</code> is a reference to a function.</p>
@@ -116,7 +116,7 @@ val indexWithinWhatsGoingOnText: (String, Int, Boolean) -&gt; Int = whatsGoingOn
 println(indexWithinWhatsGoingOnText("Hi", 0, true))  // -1
 println(indexWithinWhatsGoingOnText("what's", 0, false))  // -1
 println(indexWithinWhatsGoingOnText("what's", 0, true))  // 0</code></pre>
-<p>As you can see, we actually always work with the <code class="language-kotlin">whatsGoingOnText</code> object captured from the <a class="theory-lookup not-relevant" href="/learn/step/15420" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, a context refers to the object that is available within a scope function, such as `run`, `with`, or `apply`. | This context object is used to perform operations on the object without having to repeatedly reference it. The scope function returns the context object, allowing for method chaining and further manipulation of the object. Context objects are particularly useful for grouping related operations together, making the code more readable and concise. For example, the `apply` function is commonly used for object setting, allowing you to assign new values to an object's properties or methods.">context</a>.</p>
+<p>As you can see, we actually always work with the <code class="language-kotlin">whatsGoingOnText</code> object captured from the context.</p>
 <p>The following example of a lambda expression is a full equivalent of the above reference and can help you better understand the situation:</p>
 <pre><code class="language-kotlin">val indexWithinWhatsGoingOnText: (String, Int, Boolean) -&gt; Int =
         { string: String, startIndex: Int, ignoreCase: Boolean -&gt;

@@ -1,0 +1,12 @@
+content:
+  - Theory
+  - Visible anywhere
+  - Module-limited access control
+  - Protected Method
+  - Private vs. protected
+  - Internal field
+  - Subclass visibility
+  - Protected subclass visibility
+  - Available everywhere
+  - Private constructor
+  - Only in the same class
