@@ -3,7 +3,7 @@ hyperskill_project:
   ide_files: https://cogniterra.org/media/attachments/lesson/24772/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: "Tue, 21 May 2024 20:24:46 UTC"
+update_date: "Wed, 22 May 2024 12:28:15 UTC"
 stages:
   - id: 550
     step: 9015
@@ -115,6 +115,8 @@ topics:
       theory_id: 11233
     - title: Structural vs referential equality
       theory_id: 11236
+    - title: Work with MutableLists
+      theory_id: 14902
     - title: Functions as objects
       theory_id: 5991
     - title: Lambda expressions
@@ -127,10 +129,6 @@ topics:
       theory_id: 4633
     - title: Introduction to collections
       theory_id: 10390
-    - title: Introduction to MutableList
-      theory_id: 14879
-    - title: Work with MutableLists
-      theory_id: 14902
     - title: List
       theory_id: 10730
     - title: For loop and ranges

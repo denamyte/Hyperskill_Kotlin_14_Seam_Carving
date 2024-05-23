@@ -22,3 +22,4 @@ content:
   - Overriding constructors
   - Final members
   - Visibility modifiers for members
+  - Inheritance and constructors
