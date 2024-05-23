@@ -1,0 +1,18 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: Map
+  - text: MutableSet
+  - text: Any
+  - text: Collection
+  - text: MutableCollection
+  - text: List
+  - text: Set
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/19756#comment
+status: Solved
+record: -1
+local_check: false

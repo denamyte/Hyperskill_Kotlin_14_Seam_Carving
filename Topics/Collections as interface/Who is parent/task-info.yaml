@@ -1,0 +1,19 @@
+type: sorting
+custom_name: Who is parent?
+options:
+  - Collection
+  - Iterable
+  - List
+  - Any
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/19755#comment
+status: Solved
+record: -1
+ordering:
+  - 0
+  - 1
+  - 2
+  - 3
