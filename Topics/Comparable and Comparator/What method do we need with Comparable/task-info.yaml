@@ -1,0 +1,16 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: comparator()
+  - text: coerceIn()
+  - text: compareTo()
+  - text: main()
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/25973#comment
+status: Solved
+record: -1
+custom_name: What method do we need with Comparable?
+local_check: false

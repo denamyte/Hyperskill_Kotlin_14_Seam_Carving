@@ -1,0 +1,17 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: It provides a comparison function for imposing a total ordering between instances
+      of the type T.
+  - text: This interface is used to define a custom ordering of objects.
+  - text: This interface compares two objects of a certain type and arranges them in
+      an order.
+  - text: This interface is used to define the natural ordering of objects.
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/25970#comment
+status: Solved
+record: -1
+local_check: false
