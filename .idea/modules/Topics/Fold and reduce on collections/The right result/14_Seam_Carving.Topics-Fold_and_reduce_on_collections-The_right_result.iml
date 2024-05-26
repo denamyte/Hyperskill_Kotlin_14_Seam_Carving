@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-Fold_and_reduce_on_collections-The_right_result" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/Fold and reduce on collections/The right result" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="14_Seam_Carving" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/Fold and reduce on collections/The right result">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Fold and reduce on collections/The right result/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Fold and reduce on collections/The right result/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Fold and reduce on collections/The right result/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

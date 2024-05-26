@@ -28,7 +28,7 @@
     } // If you put here another method or function, it will receive as a parameter the result of the last expression, the number of elements greater than ten
     println("There are $bigNumbers numbers greater than ten")
 }</code></pre>
-<p>Another way to use these functions is making a temporary scope for a variable, performing some actions, getting the results, and forgetting about it like a little guppy fish forgets that it already had lunch.</p>
+<p>Another way to use these functions is making a <a class="theory-lookup not-relevant" href="/learn/step/23478" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, a temporary scope is a concept related to scope functions, which are used to organize code and execute operations in the context of an object. | These functions create a temporary scope for the object and allow you to communicate with the object using keywords such as `it` or `this` within the lambda expression. This syntax can make the code look similar to a domain-specific language (DSL), improving code readability and maintainability. However, it is important to use scope functions judiciously, as excessive use can make the code harder to understand and maintain.">temporary scope</a> for a variable, performing some actions, getting the results, and forgetting about it like a little guppy fish forgets that it already had lunch.</p>
 <pre><code class="language-kotlin">fun main() {
     val numbers = mutableListOf&lt;Int&gt;(2, 6, 8, 9, 74)
     with(numbers) {

@@ -1,0 +1,29 @@
+type: matching
+captions:
+  - reduceOrNull()
+  - foldRightIndexed()
+  - fold()
+  - runningFold()
+  - foldRight()
+options:
+  - Takes an initial value and uses it with the index as the accumulated value on the
+    first step from right to left
+  - Returns a list with intermediate values
+  - Takes an initial value and uses it as the accumulated value on the first step from
+    right to left
+  - Uses the first and the second elements as operation arguments on the first step
+    on empty collections
+  - Takes an initial value and uses it as the accumulated value on the first step
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/23335#comment
+status: Solved
+record: -1
+ordering:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4

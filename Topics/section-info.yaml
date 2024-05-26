@@ -24,3 +24,5 @@ content:
   - Visibility modifiers for members
   - Inheritance and constructors
   - Collections as interface
+  - Fold and reduce on collections
+  - Comparable and Comparator
