@@ -1,0 +1,18 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: ===
+  - text: '&lt;'
+  - text: '&gt;'
+  - text: '!='
+  - text: ==
+  - text: '&lt;='
+  - text: =&gt;
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/26446#comment
+status: Solved
+record: -1
+local_check: false

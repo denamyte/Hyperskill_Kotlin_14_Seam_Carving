@@ -1,0 +1,16 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: Type becomes the left-hand side type for binary operations.
+  - text: Provide a member function.
+  - text: Provide an extension function.
+  - text: You can only use non-nullable types as arguments.
+  - text: Type becomes the right-hand side type for binary operations.
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/26445#comment
+status: Solved
+record: -1
+local_check: false

@@ -26,3 +26,4 @@ content:
   - Collections as interface
   - Fold and reduce on collections
   - Comparable and Comparator
+  - Operator overloading
