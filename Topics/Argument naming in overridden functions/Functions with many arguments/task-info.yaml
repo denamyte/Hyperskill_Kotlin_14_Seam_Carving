@@ -1,0 +1,15 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: Use a wrapper function that accepts fewer arguments
+  - text: Use named arguments to specify only the required values
+  - text: Manually specify values for all arguments
+  - text: Use positional arguments only
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/28894#comment
+status: Solved
+record: -1
+local_check: false
