@@ -1,0 +1,15 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: It works fine
+  - text: The program won't compile because we can't iterate over collection with a
+      for loop
+  - text: 'The program will be finished with NoSuchElementException '
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/22733#comment
+status: Solved
+record: -1
+local_check: false

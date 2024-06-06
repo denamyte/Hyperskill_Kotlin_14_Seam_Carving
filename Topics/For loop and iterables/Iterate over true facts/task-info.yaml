@@ -1,0 +1,16 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: Iterable and MutableIterable inherit from Collection
+  - text: Iterable inherits from MutableIterable
+  - text: Iterable doesn't suppport modifying
+  - text: Map doesn't inherit from Collection
+  - text: List and Set are inheritors of MutableIterable
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/22729#comment
+status: Failed
+record: -1
+local_check: false
