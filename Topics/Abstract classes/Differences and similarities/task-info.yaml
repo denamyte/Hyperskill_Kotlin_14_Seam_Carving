@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: An abstract class and an interface cannot be <b>instantiated directly</b>.
+  - text: "An abstract class <b>implements</b> an interface, while an interface <b>extends</b>\
+    \ another interface."
+  - text: "An abstract class can have <b>abstract</b> and <b>non-abstract</b> methods,\
+    \ while an interface can have only <b>abstract</b> and <b>default</b> methods."
+  - text: "An abstract class can implement <b>only a single</b> interface, while an\
+    \ interface can extend <b>any number</b> of interfaces."
+  - text: An abstract class and an interface can <b>extend each other</b>.
+  - text: "An abstract class can be <b>instantiated directly</b>, while an interface\
+    \ can't."
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/31249#comment
+status: Failed
+record: -1
+local_check: false

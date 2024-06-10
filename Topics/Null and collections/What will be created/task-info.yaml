@@ -1,0 +1,21 @@
+type: matching
+custom_name: What will be created?
+captions:
+  - "val set = setOfNotNull(7, null, 404, 404, 404, null, 42, 404)"
+  - "val list = listOfNotNull(7, null, 404, 404, 404, null, 42, 404)"
+  - "val list = listOfNotNull(7, 404, 42, 404)"
+options:
+  - "[7, 404, 42, 404]"
+  - "[7, 404, 42]"
+  - "[7, 404, 404, 404, 42, 404]"
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/23973#comment
+status: Solved
+record: -1
+ordering:
+  - 0
+  - 1
+  - 2

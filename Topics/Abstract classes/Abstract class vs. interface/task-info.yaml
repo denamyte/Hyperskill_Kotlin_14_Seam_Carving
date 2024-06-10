@@ -1,0 +1,16 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: "An abstract class can have <b>default methods</b>, while an interface cannot\
+    \ have them."
+  - text: A class can <b>extend</b> only a single abstract class but it can <b>implement</b>
+      any number of interfaces.
+  - text: "An abstract class, unlike an interface, cannot have a <b>constructor</b>."
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/31246#comment
+status: Solved
+record: -1
+local_check: false
