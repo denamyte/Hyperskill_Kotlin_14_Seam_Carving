@@ -1,0 +1,15 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: Abstract classes cannot have non-abstract members.
+  - text: 'Abstract classes can have both abstract and non-abstract members. '
+  - text: All members of an abstract class must be abstract.
+  - text: Abstract classes cannot have properties.
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/31247#comment
+status: Solved
+record: -1
+local_check: false

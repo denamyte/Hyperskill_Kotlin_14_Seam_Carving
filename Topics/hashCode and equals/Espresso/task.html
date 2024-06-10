@@ -1,0 +1,17 @@
+<div class="step-text">
+<p></p><p>What is the output of the following code?</p><pre><code class="language-kotlin">open class Drink(val cost: Int) {
+    override fun equals(other: Any?): Boolean {
+        return other is Drink &amp;&amp; cost == other.cost
+    }
+}
+
+class Coffee(cost: Int, val name: String) : Drink(cost)
+
+fun main() {
+    val coffee1 = Coffee(10, "Latte")
+    val coffee2 = Coffee(10, "Cappuccino")
+
+    println(coffee1 == coffee2) 
+}
+</code></pre>
+</div>

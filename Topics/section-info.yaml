@@ -30,3 +30,8 @@ content:
   - For loop and iterables
   - Argument naming in overridden functions
   - Aggregate operations on collections  part 2
+  - Overriding properties
+  - hashCode and equals
+  - Custom sort order for collection
+  - Sealed class and interface
+  - Abstract classes

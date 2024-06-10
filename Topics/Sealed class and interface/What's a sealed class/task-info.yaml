@@ -1,0 +1,16 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: 'It makes the code run faster. '
+  - text: It allows you to restrict the types of subclasses that can be created.
+  - text: It's a container of fixed subclasses.
+  - text: It's a container for a collection of constants.
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/27602#comment
+status: Solved
+record: -1
+custom_name: What's a sealed class?
+local_check: false

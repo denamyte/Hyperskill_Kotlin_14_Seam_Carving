@@ -1,0 +1,16 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: We can customize the ordering on the fly
+  - text: Simplicity and readability
+  - text: We can apply different orders to the same collection
+  - text: It has concise syntax to perform a task
+  - text: ' We can only use natural sorting'
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/22711#comment
+status: Solved
+record: -1
+local_check: false

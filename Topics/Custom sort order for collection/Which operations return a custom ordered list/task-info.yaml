@@ -1,0 +1,17 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: sorted()
+  - text: compare()
+  - text: sortedBy()
+  - text: sortedWith()
+  - text: reversed()
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/22709#comment
+status: Solved
+record: -1
+custom_name: Which operations return a custom ordered list?
+local_check: false
