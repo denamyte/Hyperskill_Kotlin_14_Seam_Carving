@@ -59,7 +59,7 @@ fun main() {
     println(elements.filterIsInstance&lt;Int&gt;()) // [0]
 }</code></pre>
 <h5 id="partitioning">Partitioning</h5>
-<p>The <code class="language-kotlin">partition()</code> function splits the original collection in two: one with the elements that satisfy the predicate and the other with the rest of the elements of the original collection (those that don't <a class="theory-lookup not-relevant" href="/learn/step/22367" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, match refers to the process of comparing a value against a pattern or a set of patterns to determine if there is a match. | This is often done using functions such as `exact()`, `any()`, `nullable()`, and `between()` for matching exact values, any value of a certain type, null values, and ranges of values, respectively. The `match()` function can be used to check for a match and return a result, while the `matchResult` class can be used to work with the results of a match, including accessing captured groups.">match</a> the predicate).</p>
+<p>The <code class="language-kotlin">partition()</code> function splits the original collection in two: one with the elements that satisfy the predicate and the other with the rest of the elements of the original collection (those that don't match the predicate).</p>
 <pre><code class="language-kotlin">fun main() {
     val numbers = listOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 

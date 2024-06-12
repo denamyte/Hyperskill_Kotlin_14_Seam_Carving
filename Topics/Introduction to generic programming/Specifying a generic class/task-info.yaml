@@ -1,0 +1,16 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: some class from Standard Kotlin Library
+  - text: IntArray
+  - text: your own class
+  - text: Int
+  - text: String
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/14700#comment
+status: Solved
+record: -1
+local_check: false

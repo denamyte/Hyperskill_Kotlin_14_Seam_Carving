@@ -1,0 +1,17 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: "class [E]A { /* ... */ }"
+  - text: "class A[E] { /* … */ }"
+  - text: "class A&lt;E&gt; { /* … */ }"
+  - text: "class (E)A { /* … */ }"
+  - text: "class (A)E { /* … */ }"
+  - text: "class &lt;E&gt;A { /* … */ }"
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/14699#comment
+status: Solved
+record: -1
+local_check: false

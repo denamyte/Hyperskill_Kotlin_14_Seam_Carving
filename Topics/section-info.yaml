@@ -38,3 +38,7 @@ content:
   - Null and collections
   - Filtering elements in collection
   - Grouping collections
+  - Sequences
+  - Collection transformations
+  - Introduction to generic programming
+  - Generic functions
