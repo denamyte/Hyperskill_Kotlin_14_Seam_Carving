@@ -36,3 +36,5 @@ content:
   - Sealed class and interface
   - Abstract classes
   - Null and collections
+  - Filtering elements in collection
+  - Grouping collections

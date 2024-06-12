@@ -1,0 +1,14 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: "{[anne, alice], [dimitry, dany], [michael]}"
+  - text: "{a=[anne, alice], d=[dimitry, dany], m=[michael]}"
+  - text: "{a=2, d=2, m=1}"
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/23348#comment
+status: Solved
+record: -1
+local_check: false

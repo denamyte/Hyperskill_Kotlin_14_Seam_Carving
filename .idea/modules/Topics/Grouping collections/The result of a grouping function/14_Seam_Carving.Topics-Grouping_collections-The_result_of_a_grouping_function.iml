@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-Grouping_collections-The_result_of_a_grouping_function" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/Grouping collections/The result of a grouping function" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="14_Seam_Carving" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/Grouping collections/The result of a grouping function">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Grouping collections/The result of a grouping function/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Grouping collections/The result of a grouping function/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Grouping collections/The result of a grouping function/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

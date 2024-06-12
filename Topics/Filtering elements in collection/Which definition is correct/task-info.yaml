@@ -1,0 +1,19 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: "Returns two collections: one with non-null elements and the other with null\
+    \ elements"
+  - text: Returns a collection with the elements of the type indicated in the predicate
+  - text: Returns true or false based of the extension function
+  - text: ' Returns a new collection with the elements that satisfy the predicate'
+  - text: Returns the collection that satisfies the result of evaluating the predicate
+      on the index
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/22371#comment
+status: Solved
+record: -1
+custom_name: Which definition is correct?
+local_check: false
