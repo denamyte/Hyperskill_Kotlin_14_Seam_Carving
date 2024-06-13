@@ -1,0 +1,15 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: <code>ReadOnlyProperty</code> interface
+  - text: <code>ReadAndWriteProperty</code> interface
+  - text: <code>ReadWriteProperty</code> interface
+  - text: <code>ReadProperty</code> interface
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/32140#comment
+status: Solved
+record: -1
+local_check: false

@@ -1,0 +1,15 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: Using <code>property::this</code>
+  - text: Using <code>::this.property</code>
+  - text: Using <code>this::property</code>
+  - text: Using <code>property.this::</code>
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/32139#comment
+status: Solved
+record: -1
+local_check: false

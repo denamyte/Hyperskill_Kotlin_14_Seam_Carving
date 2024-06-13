@@ -1,0 +1,158 @@
+<div class="step-text">
+<p>In Kotlin, delegation extends beyond classes to properties. In contrast to conventional properties that are directly backed by corresponding fields, <a class="theory-lookup not-relevant" href="/learn/step/32136" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, a delegated property is a type of property that is not backed by a class field. | Instead, getting and setting of the property are delegated to another piece of code. This abstraction allows for shared functionality between similar properties. For instance, you can store property values in a map instead of using separate fields. Delegated properties are used by declaring the property and the delegate that it uses. The delegate has and methods which take over the get and set methods, respectively, corresponding to the property. It's important to keep delegated properties focused and avoid unnecessary delegation. Each delegated property should do one thing well and avoid creating god-like delegates that try to do too much. Additionally, not every property needs to be delegated. Use delegation when it provides a clear benefit, such as reducing boilerplate code or improving performance.">delegated properties</a> assign the responsibilities of getting and setting to a separate block of code. This allows for delegated functionality to be abstracted out and shared between multiple similar properties, enabling us to define common properties once and reuse them in multiple instances, thereby enhancing efficiency and maintainability.</p>
+<h5 id="delegating-properties-example">Delegating properties: example</h5>
+<p>Consider a class named <code class="language-kotlin">Example</code> with two properties of type <code class="language-kotlin">String</code>: <code class="language-kotlin">firstProp</code> and <code class="language-kotlin">secondProp</code>. If we want these properties to have identical formatting rules, we could implement a setter function for each property:</p>
+<pre><code class="language-kotlin">class Example {
+    var firstProp: String = ""
+        set(value) {
+            // Remove all vowels and convert the remaining string to uppercase
+            field = value.replace(Regex("[aeiouAEIOU]"), "").uppercase()
+        }
+
+    var secondProp: String = ""
+        set(value) {
+            // Remove all vowels and convert the remaining string to uppercase
+            field = value.replace(Regex("[aeiouAEIOU]"), "").uppercase()
+        }
+}</code></pre>
+<p>In this example, we define a <code class="language-kotlin">set</code> function for both properties to remove all vowels from the input <code class="language-kotlin">value</code> and convert the remaining string to uppercase. However, this approach leads to code repetition, making our code harder to test and maintain. A more efficient way to write this code is by delegating the setter function to a <strong>delegate</strong>:</p>
+<pre><code class="language-kotlin">class Example {
+    var firstProp: String by Formatter    
+    var secondProp: String by Formatter
+}</code></pre>
+<p>Delegated properties are declared by specifying the property and the delegate it uses. The <code class="language-kotlin">by</code> <a class="theory-lookup not-relevant" href="/learn/step/32136" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, a keyword is a word that has a special meaning in the language and cannot be changed by the programmer. | It is used to define the structure and behavior of the code. Examples of keywords in Kotlin include `fun` (used to define a function), `var` (used to define a variable), and `if` (used to define a conditional statement). Keywords are reserved words in Kotlin and cannot be used as identifiers.">keyword</a> indicates that the property is controlled by the provided delegate instead of its own field. The syntax is: <code class="language-kotlin">val/var &lt;property name&gt;: &lt;Type&gt; by &lt;delegate&gt;</code>. Let's see next how we can implement such a delegate.</p>
+<h5 id="implementing-the-delegate">Implementing the delegate</h5>
+<p>Property delegates need to always provide a <code class="language-kotlin">getValue()</code> function (and <code class="language-kotlin">setValue()</code> for vars). In our previous example, <code class="language-kotlin">Formatter</code> is the delegate controlling the getter and setter of the properties <code class="language-kotlin">firstProp</code> and <code class="language-kotlin">secondProp</code>. Here's how we implement it:</p>
+<pre><code class="language-kotlin">import kotlin.reflect.KProperty
+
+class Formatter {
+    private var value: String = ""
+
+    operator fun getValue(thisRef: Any?, property: KProperty&lt;*&gt;): String {
+        return value
+    }
+
+    operator fun setValue(thisRef: Any?, property: KProperty&lt;*&gt;, value: String) {
+        this.value = value.replace(Regex("[aeiouAEIOU]"), "").uppercase()
+    }
+}</code></pre>
+<p>As you can see, creating a custom property delegate in Kotlin involves defining a class that provides the <code class="language-kotlin">getValue()</code> and <code class="language-kotlin">setValue()</code> methods, which perform getting and setting operations for the property, respectively.</p>
+<p>To better understand the parameters of each function, let's take the following example:</p>
+<pre><code class="language-kotlin">import kotlin.reflect.KProperty
+
+class AnotherExample {
+    val stringProp: String by Delegate()
+    fun foo(): String {
+        return ""
+    }
+}
+
+class Delegate {
+    private var curValue = ""
+
+    operator fun getValue(thisRef: AnotherExample, property: KProperty&lt;*&gt;): String {
+        println(thisRef.stringProp + thisRef.foo()) // thisRef allows us to access any member of the class: AnotherExample
+        return curValue
+    }
+}</code></pre>
+<p>In this example, we want to delegate a <a class="theory-lookup not-relevant" href="/learn/step/32136" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, a read-only property is a property that can only be read and not modified. | It is achieved by using the `val` keyword instead of `var` when declaring the property. The `val` keyword indicates that the property is immutable and can only be assigned a value once during initialization. This helps ensure the integrity of the data and prevent unintended modification. Additionally, read-only properties can be used to expose internal state in a safe and controlled manner, without allowing external code to modify it.">read-only property</a> (<code class="language-kotlin">val</code>). To do that, we should provide a function <code class="language-kotlin">getValue()</code>, which is marked with the <code class="language-kotlin">operator</code> keyword, returns the same type as the delegating property (<code class="language-kotlin">stringProp</code>), and has the following parameters:</p>
+<ul>
+<li>
+<p><code class="language-kotlin">thisRef</code>: it must be the same type as, or a supertype of, the class owning the delegating property. It represents the object that contains the delegated property and can be used to access other members of the object, such as other properties or functions.</p>
+</li>
+<li>
+<p><code class="language-kotlin">property</code>: it must be of type <code class="language-kotlin">KProperty&lt;*&gt;</code> and can be used to access the metadata of the delegated property. For example, if we want to print the name of the delegating property, we should write:</p>
+</li>
+</ul>
+<pre><code class="language-kotlin">println(property.name) // stringProp</code></pre>
+<p></p>
+<div class="alert alert-warning">Make sure to import the package <code class="language-kotlin">kotlin.reflect.KProperty</code> in order to use the <code class="language-kotlin">KProperty</code> class in your code.</div>
+<p>Now, what happens if we change the property <code class="language-kotlin">stringProp</code> from <code class="language-kotlin">val</code> to <code class="language-kotlin">var</code>? In that case, we must provide an additional function <code class="language-kotlin">setValue()</code>, like this:</p>
+<pre><code class="language-kotlin">import kotlin.reflect.KProperty
+
+class AnotherExample {
+    var stringProp: String by Delegate()
+    ...
+}
+
+class Delegate {
+    private var curValue = ""
+
+    operator fun getValue(...): String { ... }
+
+    operator fun setValue(thisRef: AnotherExample, property: KProperty&lt;*&gt;, value: String) {
+        println("The new value of ${property.name} is: $value")
+    }
+}</code></pre>
+<p>Here we provided a second function <code class="language-kotlin">setValue()</code>, which is marked with the <code class="language-kotlin">operator</code> keyword and has an additional parameter <code class="language-kotlin">value</code>, which must be of the same type as the delegating property.</p>
+<p></p>
+<div class="alert alert-primary">When building your own property delegates, make sure to follow all the requirements specified in the Kotlin <a href="https://kotlinlang.org/docs/delegated-properties.html#property-delegate-requirements" rel="noopener noreferrer nofollow" target="_blank">documentation</a>.</div>
+<h5 id="anonymous-delegates">Anonymous delegates</h5>
+<p>Kotlin allows you to create delegates as <strong><a class="theory-lookup not-relevant" href="/learn/step/32136" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, an anonymous object is an instance of a class created on-the-fly, which has no name and can be used to perform specific tasks. | They are useful when you need to create an object that implements a certain interface or inherits a class, but you don't need to create a whole new class for that. To create an anonymous object, you can use the object keyword, followed by the interface or class to be implemented or inherited. Anonymous objects have a limited scope and can implement interfaces. They are often used for event handling, especially in user interfaces, and as comparators.">anonymous objects</a></strong> without the need for new classes. Simply use the <code class="language-kotlin">ReadOnlyProperty</code> and <code class="language-kotlin">ReadWriteProperty</code> interfaces from the Kotlin standard library. Just make sure to import the right package:</p>
+<pre><code class="language-kotlin">import kotlin.properties.ReadOnlyProperty  // To use ReadOnlyProperty
+import kotlin.properties.ReadWriteProperty // To use ReadWriteProperty</code></pre>
+<p>These interfaces provide the necessary methods:</p>
+<ul>
+<li><code class="language-kotlin">getValue()</code> is declared in <code class="language-kotlin">ReadOnlyProperty</code>.</li>
+<li> while <code class="language-kotlin">ReadWriteProperty</code> extends it and adds <code class="language-kotlin">setValue()</code>.</li>
+</ul>
+<p>This means you can pass a <code class="language-kotlin">ReadWriteProperty</code> wherever <code class="language-kotlin">ReadOnlyProperty</code> is expected. Here's an example:</p>
+<pre><code class="language-kotlin">import kotlin.properties.ReadWriteProperty
+import kotlin.reflect.KProperty
+
+fun anonymousDelegate() = object : ReadWriteProperty&lt;Any?, String&gt; {
+    var curValue = ""
+
+    override fun getValue(thisRef: Any?, property: KProperty&lt;*&gt;) {
+        return curValue
+    }
+
+    override fun setValue(thisRef: Any?, property: KProperty&lt;*&gt;, value: String) {
+        curValue = value
+        println("The new value of ${property.name} is: $value")
+    }
+}
+
+fun main() {
+    val readOnlyString: String by anonymousDelegate()
+    var readWriteString: String by anonymousDelegate()
+
+    readWriteString = "Hello!" // The new value of readWriteString is: Hello!
+}
+</code></pre>
+<p>In this example, we define a function called <code class="language-kotlin">anonymousDelegate</code> that returns an instance of an anonymous <code class="language-kotlin">object</code> implementing the <code class="language-kotlin">ReadWriteProperty</code> interface for a property of type <code class="language-kotlin">String</code>. The anonymous object has a property called <code class="language-kotlin">curValue</code> that is used to store the current value of the delegated property. The <code class="language-kotlin">getValue</code> function returns the value of this property, while the <code class="language-kotlin">setValue</code> function updates its value and prints a message to the console indicating the new value of the property.</p>
+<p>You might have noticed that we are delegating properties directly from inside the main function and they are not declared inside a class. This is another feature provided by Kotlin, and it is called <strong>local delegated properties</strong>, which means you can use delegated properties not only in classes, but also as <a class="theory-lookup not-relevant" href="/learn/step/32136" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, a local variable is a named value that is declared within a block of code and is only accessible within that block. | It differs from a top-level variable, which is accessible from anywhere in the program. Local variables can be either mutable or read-only, depending on whether they are declared with the `var` or `val` keyword, respectively. Local variables are useful for storing temporary values or for encapsulating the scope of a variable to improve code readability and reduce the likelihood of errors. It is a good practice to use local variables instead of top-level ones whenever possible.">local variables</a> within functions.</p>
+<h5 id="delegating-to-another-property">Delegating to another property</h5>
+<p>In Kotlin, you can delegate a property to another property, allowing you to reuse the behavior of an existing property for a new property. To delegate a property to another property, we use the <code class="language-kotlin">by</code> keyword followed by the name of the property you want to delegate to. Here's an example that demonstrates how to delegate a property to another property:</p>
+<pre><code class="language-kotlin">class Example {
+    private var _counter = 0
+    var counter: Int
+        get() = _counter
+        set(value) {
+            _counter = value
+            println("Counter set to $value")
+        }
+
+    var anotherCounter: Int by this::counter
+}
+
+fun main() {
+    val example = Example()
+    example.anotherCounter = 5 // Counter set to 5
+}
+</code></pre>
+<p>In this example, we define a class called <code class="language-kotlin">Example</code>, which has two properties: <code class="language-kotlin">counter</code> and <code class="language-kotlin">anotherCounter</code>. The <code class="language-kotlin">counter</code> property is backed by a private field called <code class="language-kotlin">_counter</code> and has a <a class="theory-lookup not-relevant" href="/learn/step/32136" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, a custom getter is a user-defined function that overrides the default getter function for a property. | By default, Kotlin generates a getter function for each property that returns the value of the property's backing field. However, if you want to customize the way the property's value is calculated or returned, you can define a custom getter function. Custom getters can be used to perform additional operations or calculations before returning the property's value. For example, you can use a custom getter to format a date or currency value, or to perform a complex calculation based on the property's value. Custom getters can also be used to control access to a property, such as by returning a default value or an error message when the property is accessed in an invalid way. Another use case for custom getters is when you want to return a different value than the one stored in the property's backing field. For instance, you can use a custom getter to return a subset of an array or a collection, or to combine the values of multiple properties into a single value.">custom getter</a> and setter. The getter simply returns the value of the <code class="language-kotlin">_counter</code> field, while the setter updates the value of the <code class="language-kotlin">_counter</code> field and prints a message to the console indicating the new value of the property.</p>
+<p>The <code class="language-kotlin">anotherCounter</code> property is delegated to the <code class="language-kotlin">counter</code> property using the <code class="language-kotlin">by</code> keyword followed by <code class="language-kotlin">this::counter</code>, which refers to the <code class="language-kotlin">counter</code> property of the current <a class="theory-lookup not-relevant" href="/learn/step/32136" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, an instance refers to an object or an instance of a class that is created during runtime. | It is a subtype of every known type in Kotlin, meaning it can represent a value of any type in terms of type checking. This is particularly useful in situations where a function demands a return type, but it is impossible to return a value, such as when calculating a percentage if the value is zero. In such cases, a function that returns `Instance` can be used. The concept of instance is also related to threading, where only one thread can execute code in a synchronized method of a particular instance. This means that different threads can execute methods of different objects at the same time, a concept that can be summarized as one thread per instance.">instance</a> of the <code class="language-kotlin">Example</code> class. This means that when we get or set the value of the <code class="language-kotlin">anotherCounter</code> property, it will actually get or set the value of the <code class="language-kotlin">counter</code> property.</p>
+<p>We can delegate to a property of another class by writing the name of that class instead of <code class="language-kotlin">this</code>.</p>
+<p></p>
+<div class="alert alert-primary">To learn more about delegating to another property, you can refer to the official <a href="https://kotlinlang.org/docs/delegated-properties.html#delegating-to-another-property" rel="noopener noreferrer nofollow" target="_blank">documentation</a>.</div>
+<h5 id="best-practices">Best practices</h5>
+<p>Here are some best practices to follow when using property delegation in Kotlin:</p>
+<p><strong>1) Use <a class="theory-lookup not-relevant" href="/learn/step/32136" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, a standard delegate refers to pre-built delegates that provide common functionality for properties, such as lazy initialization, observing property changes, vetoing property changes, enforcing non-nullability, and storing properties in a map. | These standard delegates make it easier and more efficient to implement these functionalities. However, it's important to use delegation judiciously, focusing on one task per delegated property and avoiding unnecessary delegation to keep the code readable and maintainable. Standard delegates are covered in detail in another topic.">standard delegates</a> when possible</strong>. The Kotlin standard library provides several useful kinds of delegates, such as <code class="language-kotlin">lazy</code> properties, <code class="language-kotlin">observable</code> properties, and storing properties in a map. These standard delegates can help you implement common functionality more easily and efficiently. These standard delegates are covered in another topic.</p>
+<p><strong>2) Keep your delegated properties focused</strong>. Each delegated property should do one thing well. Avoid creating "god-like" delegates that try to do too much, as they can become hard to maintain and test.</p>
+<p><strong>3) Avoid unnecessary delegation</strong>. While property delegation is a powerful feature, not every property needs to be delegated. Use delegation when it provides a clear benefit, such as reducing boilerplate code or improving performance. Overusing property delegation can make your code harder to read and understand.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>In this topic, we've learned about the power and flexibility of property delegation in Kotlin. We've seen how delegation can be used to extend beyond classes to properties, allowing for delegated functionality to be abstracted out and shared between multiple similar properties.</p>
+<p>We've explored how to implement custom property delegates by defining the <code class="language-kotlin">getValue()</code> and <code class="language-kotlin">setValue()</code> methods. We've also learned about <a class="theory-lookup not-relevant" href="/learn/step/32136" rel="noopener noreferrer nofollow" target="_blank" title="In Kotlin, an anonymous delegate is an object that implements an interface from the Kotlin standard library, allowing you to delegate a property to it. | This object is created without the need for a new class and can be passed wherever an instance of that interface is expected. Anonymous delegates typically have a property that stores the current value of the delegated property and functions to get and update that value. They can be used to implement custom property delegates, delegate properties directly from functions, and reuse the behavior of existing properties for new properties.">anonymous delegates</a> and how to use the <code class="language-kotlin">ReadOnlyProperty</code> and <code class="language-kotlin">ReadWriteProperty</code> interfaces from the Kotlin standard library to create delegates as anonymous objects.</p>
+<p>Finally, we've seen how to delegate a property to another property, allowing us to reuse the behavior of an existing property for a new property. All that demonstrates the power and flexibility of property delegation in Kotlin and shows how it can be used to write more efficient and maintainable code.</p>
+</div>
